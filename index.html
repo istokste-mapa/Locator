@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Všetko nájdeš jedným klikom</title>
+    <title>Okolie na klik!</title>
     <style>
         /* --- CSS Štýly pre Dizajn --- */
         body {
@@ -239,9 +239,9 @@
     <div id="myNav" class="menu-overlay">
         <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
         <div class="menu-overlay-content">
-            <a href="#basic" onclick="closeNav()">Základné Potreby (1. Sekcia)</a>
-            <a href="#service" onclick="closeNav()">Servis a Údržba (2. Sekcia)</a>
-            <a href="#treasures" onclick="closeNav()">Cestovateľské Poklady (3. Sekcia)</a>
+            <a href="#basic" onclick="closeNav()">Základné</a>
+            <a href="#service" onclick="closeNav()">Servis a Údržba</a>
+            <a href="#treasures" onclick="closeNav()">Cestovateľské Poklady</a>
             <div style="height: 50px;"></div>
             <a href="#ai-assistance-section" onclick="closeNav()">AI Asistencia</a>
         </div>
@@ -250,7 +250,7 @@
     <div class="menu-btn" onclick="openNav()">MENU</div>
 
     <div class="container">
-        <h1>Všetko nájdeš jedným klikom</h1>
+        <h1>Okolie na klik!</h1>
         
         <div class="spinner" id="loading-spinner"></div>
         <div id="status"></div>
@@ -261,12 +261,12 @@
                 <input type="text" id="ai-input-top" placeholder="Zadajte, čo hľadáte (napr. Čínska reštaurácia)...">
                 <div id="ai-actions">
                     <button id="search-btn-top">Vyhľadať (Text)</button>
-                    <button id="voice-btn-top">Hlasový Vstup</button>
+                    <button id="voice-btn-top">Nadiktuj</button>
                 </div>
             </div>
         </section>
 
-        <h2 id="basic">Základné Potreby</h2>
+        <h2 id="basic">Základné</h2>
         <div class="btn-grid">
             <button class="action-btn" data-query="restaurant and local dining">🍽️ Reštaurácia</button>
             <button class="action-btn" data-query="supermarket and grocery store">🛒 Supermarket</button>
@@ -483,3 +483,4 @@
     </script>
 </body>
 </html>
+
