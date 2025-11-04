@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okolie na klik!</title>
+    <title>Okolie na klik</title>
     <style>
         /* --- CSS Štýly pre Dizajn --- */
         body {
@@ -101,7 +101,7 @@
             padding-bottom: 5px;
             margin-top: 40px;
             margin-bottom: 20px;
-            scroll-margin-top: 80px; /* Vytvorí priestor pri scrollovaní z menu */
+            scroll-margin-top: 80px;
         }
 
         .btn-grid {
@@ -150,98 +150,124 @@
             margin-top: 0;
             color: #e74c3c;
             text-align: center;
-            font-size: 1.2em; /* Menšia veľkosť pre dlhší text */
+            font-size: 1.2em; 
             line-height: 1.4;
         }
-
-        #ai-input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
+        
+        /* Kalkulačka a Dôvera štýly */
+        .currency-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        #ai-actions {
+        .calculator-input-group {
             display: flex;
+            align-items: center;
             gap: 10px;
+            margin-bottom: 15px;
         }
 
-        #ai-actions button {
-            flex-grow: 1;
-            padding: 12px 20px;
-            border: none;
+        .calculator-input-group input, .calculator-input-group select {
+            padding: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
+        }
+
+        .calculator-input-group input {
+            flex-grow: 1;
+        }
+
+        .result-output {
+            padding: 15px;
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+            border-radius: 5px;
             font-weight: bold;
-            cursor: pointer;
+            text-align: center;
+            color: #0056b3;
+        }
+        
+        /* Odkaz na podporu */
+        .support-link-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .support-link-section a {
+            display: inline-block;
+            background-color: #fbbc04;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
             transition: background-color 0.3s;
         }
-
-        #search-btn {
-            background-color: #2ecc71;
-            color: white;
+        
+        .support-link-section a:hover {
+            background-color: #e0ac00;
+        }
+        
+        /* Sekcia Dôvera */
+        #trust-info {
+            margin-top: 50px; 
+            padding: 20px; 
+            border-top: 1px solid #ccc; 
+            font-size: 0.9em; 
+            color: #555;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+        
+        #trust-info h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
         }
 
-        #search-btn:hover {
-            background-color: #27ae60;
+        #trust-info ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding-left: 0;
         }
 
-        #voice-btn {
-            background-color: #e74c3c;
-            color: white;
-        }
-
-        #voice-btn:hover {
-            background-color: #c0392b;
-        }
-
-        /* Status správy */
-        #status {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #fff3cd;
-            color: #856404;
-            display: none;
+        /* Footer */
+        .footer {
             text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 40px;
         }
-
-        /* Loading Spinner */
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-top: 4px solid #007bff;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            margin: 10px auto;
-            display: none;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Responsiveness pre úzke obrazovky */
-        @media (max-width: 600px) {
-            .btn-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        
+        #ai-input { width: 100%; padding: 12px; margin-bottom: 10px; border: 2px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 16px; }
+        #ai-actions { display: flex; gap: 10px; }
+        #ai-actions button { flex-grow: 1; padding: 12px 20px; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s; }
+        #search-btn { background-color: #2ecc71; color: white; }
+        #search-btn:hover { background-color: #27ae60; }
+        #voice-btn { background-color: #e74c3c; color: white; }
+        #voice-btn:hover { background-color: #c0392b; }
+        #status { margin-top: 20px; padding: 10px; border-radius: 5px; background-color: #fff3cd; color: #856404; display: none; text-align: center; }
+        .spinner { border: 4px solid rgba(0, 0, 0, 0.1); border-top: 4px solid #007bff; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; margin: 10px auto; display: none; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @media (max-width: 600px) { .btn-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-
     <div id="myNav" class="menu-overlay">
         <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
         <div class="menu-overlay-content">
             <a href="#basic" onclick="closeNav()">Základné</a>
             <a href="#service" onclick="closeNav()">Servis a Údržba</a>
             <a href="#treasures" onclick="closeNav()">Cestovateľské Poklady</a>
+            <a href="#calculator" onclick="closeNav()">Euro Kalkulačka</a>
             <div style="height: 50px;"></div>
             <a href="#ai-assistance-section" onclick="closeNav()">AI Asistencia</a>
         </div>
@@ -250,7 +276,7 @@
     <div class="menu-btn" onclick="openNav()">MENU</div>
 
     <div class="container">
-        <h1>Okolie na klik!</h1>
+        <h1>Okolie na klik</h1>
         
         <div class="spinner" id="loading-spinner"></div>
         <div id="status"></div>
@@ -261,7 +287,7 @@
                 <input type="text" id="ai-input-top" placeholder="Zadajte, čo hľadáte (napr. Čínska reštaurácia)...">
                 <div id="ai-actions">
                     <button id="search-btn-top">Vyhľadať (Text)</button>
-                    <button id="voice-btn-top">Nadiktuj</button>
+                    <button id="voice-btn-top">Hlasový Vstup</button>
                 </div>
             </div>
         </section>
@@ -297,6 +323,24 @@
             <button class="action-btn" data-query="quiet local park and green space">🌳 Tichý Park</button>
         </div>
         
+        <h2 id="calculator">Euro Kalkulačka</h2>
+        <div class="currency-box">
+            <div class="calculator-input-group">
+                <input type="number" id="local-amount" value="1" min="0" step="0.01" placeholder="Zadajte sumu">
+                <select id="local-currency">
+                    <option value="HUF">HUF (Maďarské Forinty)</option>
+                    <option value="PLN">PLN (Poľské Zloté)</option>
+                    <option value="CZK">CZK (České Koruny)</option>
+                    <option value="EUR">EUR (Euro) - default</option>
+                </select>
+            </div>
+            <div class="result-output" id="result-output">
+                1 EUR = 1.00 €
+            </div>
+            <small style="display: block; text-align: center; color: #888; margin-top: 10px;">Kurzy sú statické (nastavené napevno), pre rýchlu orientáciu.</small>
+        </div>
+
+
         <section id="ai-assistance-section">
             <div id="ai-assistance">
                 <h2>Čo nie je v ponuke ti nájde AI. Povedz mi alebo napíš, čo hľadáš.</h2>
@@ -308,12 +352,80 @@
             </div>
         </section>
 
+        <section id="trust-info">
+            <h3>Dôvera a Rýchly Návod</h3>
+            <p><strong>Ako funguje "Okolie na klik":</strong></p>
+            <ul>
+                <li>Aplikácia sa vždy pýta na Vašu aktuálnu polohu, pretože Vaše súradnice nepoužívame a nikam neukladáme.</li>
+                <li>Po kliknutí na tlačidlo si vyžiadame polohu a priamo otvoríme Google Mapy s vyhľadávaním v okolí.</li>
+            </ul>
+            <p style="font-weight: bold; color: #007bff;">⚠️ Súkromie: Táto aplikácia nepoužíva žiadne cookies a Vaše polohové dáta nikdy neopustia Váš telefón ani náš server.</p>
+            <p><strong>Ako pridať aplikáciu na plochu (ikona na jedno kliknutie):</strong></p>
+            <ol>
+                <li>V prehliadači (Chrome, Safari, atď.) kliknite na ikonu **Menu** (⋮ alebo štvorec so šípkou hore).</li>
+                <li>Vyberte možnosť **"Pridať na plochu"** (Add to Home Screen).</li>
+            </ol>
+            
+            <div class="support-link-section">
+                <p>Páči sa Vám aplikácia? Podporte jej vývoj drobným príspevkom!</p>
+                <a href="https://buymeacoffee.com/stefanistok" target="_blank" rel="noopener noreferrer">Podporiť vývojárov</a>
+            </div>
+        </section>
 
     </div>
+    
+    <div class="footer">
+        © 2025 Štefan Istok
+    </div>
+        <script>
+        // --- Statické kurzy (pre rýchlu kalkuláciu) ---
+        const EXCHANGE_RATES = {
+            'HUF': 395, // 1 EUR = 395 HUF
+            'PLN': 4.3,  // 1 EUR = 4.3 PLN
+            'CZK': 24.6, // 1 EUR = 24.6 CZK
+            'EUR': 1.0   // 1 EUR = 1.0 EUR
+        };
 
-    <script>
-        // --- JavaScript Funkcie ---
+        // --- Kalkulačka Funkcie ---
+        const localAmountInput = document.getElementById('local-amount');
+        const localCurrencySelect = document.getElementById('local-currency');
+        const resultOutputDiv = document.getElementById('result-output');
 
+        function calculateCurrency() {
+            const amount = parseFloat(localAmountInput.value) || 0;
+            const currency = localCurrencySelect.value;
+            const rate = EXCHANGE_RATES[currency];
+
+            let resultEUR;
+            
+            if (currency === 'EUR') {
+                resultEUR = amount;
+            } else {
+                resultEUR = amount / rate;
+            }
+
+            resultOutputDiv.textContent = `${amount.toFixed(2)} ${currency} = ${resultEUR.toFixed(2)} €`;
+
+            // Uložiť posledný stav do Local Storage
+            localStorage.setItem('lastAmount', localAmountInput.value);
+            localStorage.setItem('lastCurrency', localCurrencySelect.value);
+        }
+
+        // Načítanie posledného stavu pri štarte
+        if (localStorage.getItem('lastAmount')) {
+            localAmountInput.value = localStorage.getItem('lastAmount');
+        }
+        if (localStorage.getItem('lastCurrency')) {
+            localCurrencySelect.value = localStorage.getItem('lastCurrency');
+        }
+
+        // Spustenie kalkulácie pri zmene vstupu/výberu
+        localAmountInput.addEventListener('input', calculateCurrency);
+        localCurrencySelect.addEventListener('change', calculateCurrency);
+        calculateCurrency(); // Spustiť pri načítaní stránky
+
+        // --- Zvyšok Kódu (Geolokácia a UI) ---
+        
         const STATUS_OK = "Získavam polohu...";
         const STATUS_FAIL_GPS = "❌ Nepodarilo sa získať presnú polohu. Skúste znova alebo sa presuňte von.";
         const STATUS_FAIL_ACCURACY = "⚠️ Poloha bola získaná, ale je príliš nepresná (presnosť > 5 km). Skúste znova.";
@@ -323,73 +435,44 @@
         const spinner = document.getElementById('loading-spinner');
         let currentQuery = '';
         const TIMEOUT_MS = 10000;
-        const MAX_ACCURACY = 5000; // 5 km v metroch
+        const MAX_ACCURACY = 5000;
 
-        // --- Navigačné Menu Funkcie ---
-        function openNav() {
-            document.getElementById("myNav").style.width = "100%";
-        }
+        function openNav() { document.getElementById("myNav").style.width = "100%"; }
+        function closeNav() { document.getElementById("myNav").style.width = "0%"; }
 
-        function closeNav() {
-            document.getElementById("myNav").style.width = "0%";
-        }
-
-        // Pridanie Event Listenerov pre Tlačidlá
         document.querySelectorAll('.action-btn').forEach(button => {
             button.addEventListener('click', function() {
                 currentQuery = this.getAttribute('data-query');
                 findLocationAndSearch();
             });
         });
-
-        // Hladké scrollovanie (pre menu)
         document.querySelectorAll('.menu-overlay-content a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // --- AI Asistencia Funkcie (Textové vyhľadávanie) ---
         function setupAiSearch(inputId, searchBtnId) {
             document.getElementById(searchBtnId).addEventListener('click', function() {
                 currentQuery = document.getElementById(inputId).value.trim();
-                if (currentQuery) {
-                    findLocationAndSearch();
-                } else {
-                    displayStatus("Zadajte, prosím, hľadaný výraz do poľa AI Asistencie.", true);
-                }
+                if (currentQuery) { findLocationAndSearch(); } else { displayStatus("Zadajte, prosím, hľadaný výraz do poľa AI Asistencie.", true); }
             });
         }
-        
         setupAiSearch('ai-input-top', 'search-btn-top');
         setupAiSearch('ai-input-bottom', 'search-btn-bottom');
 
-
-        // --- Hlasový Vstup Funkcie ---
-        
-        // Funkcia sa pripája k obom tlačidlám Hlasového Vstupu
         document.getElementById('voice-btn-top').addEventListener('click', () => startVoiceRecognition('ai-input-top'));
         document.getElementById('voice-btn-bottom').addEventListener('click', () => startVoiceRecognition('ai-input-bottom'));
-
 
         function startVoiceRecognition(targetInputId) {
             if (!('webkitSpeechRecognition' in window)) {
                 displayStatus("❌ Váš prehliadač nepodporuje Hlasový vstup (Web Speech API). Použite, prosím, textové zadávanie.", true);
                 return;
             }
-
             const recognition = new webkitSpeechRecognition();
-            recognition.lang = 'sk-SK'; // Nastavenie jazyka na slovenčinu
-            recognition.interimResults = false;
-            recognition.maxAlternatives = 1;
-
-            recognition.onstart = function() {
-                displayStatus("🎤 Počúvam... Prosím, hovorte zreteľne.", false, true);
-            };
-
+            recognition.lang = 'sk-SK'; recognition.interimResults = false; recognition.maxAlternatives = 1;
+            recognition.onstart = function() { displayStatus("🎤 Počúvam... Prosím, hovorte zreteľne.", false, true); };
             recognition.onresult = function(event) {
                 const transcript = event.results[0][0].transcript;
                 document.getElementById(targetInputId).value = transcript;
@@ -397,25 +480,16 @@
                 currentQuery = transcript.trim();
                 findLocationAndSearch();
             };
-
             recognition.onerror = function(event) {
                 let errorMessage = "❌ Chyba pri rozpoznávaní hlasu. Skúste znova.";
-                if (event.error === 'not-allowed') {
-                    errorMessage = "❌ Odmietnutý prístup k mikrofónu. Povoľte, prosím, mikrofón v nastaveniach prehliadača pre túto stránku.";
-                }
+                if (event.error === 'not-allowed') { errorMessage = "❌ Odmietnutý prístup k mikrofónu. Povoľte, prosím, mikrofón v nastaveniach prehliadača pre túto stránku."; }
                 displayStatus(errorMessage, true);
             };
-
             recognition.onend = function() {
-                if (statusDiv.style.display === 'block' && statusDiv.textContent.includes("Počúvam")) {
-                     displayStatus("Počúvanie ukončené. Spracovávam...");
-                }
+                if (statusDiv.style.display === 'block' && statusDiv.textContent.includes("Počúvam")) { displayStatus("Počúvanie ukončené. Spracovávam..."); }
             };
-            
             recognition.start();
         }
-
-        // --- Geolokácia a Vyhľadávanie ---
 
         function displayStatus(message, isError = false, showSpinner = false) {
             statusDiv.textContent = message;
@@ -426,43 +500,23 @@
         }
 
         function findLocationAndSearch() {
-            displayStatus(STATUS_OK, false, true); // Zobraziť loading
-            
-            navigator.geolocation.getCurrentPosition(
-                successCallback,
-                errorCallback,
-                {
-                    enableHighAccuracy: true,
-                    timeout: TIMEOUT_MS,
-                    maximumAge: 0
-                }
-            );
+            displayStatus(STATUS_OK, false, true);
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback, { enableHighAccuracy: true, timeout: TIMEOUT_MS, maximumAge: 0 });
         }
 
         function successCallback(position) {
             spinner.style.display = 'none';
-
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             const accuracy = position.coords.accuracy;
-            
-            // Kontrola Presnosti (< 5 km)
             if (accuracy > MAX_ACCURACY) {
                 displayStatus(STATUS_FAIL_ACCURACY + ` (Presnosť: ${Math.round(accuracy)}m)`, true);
                 return;
             }
-            
-            // Kontrola či Query nie je prázdna (ak by náhodou bola)
             const finalQuery = currentQuery || 'local points of interest';
-
-            // Univerzálny formát URL pre Google Maps (využitie predošlej lekcie)
             const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(finalQuery)}&ll=${latitude},${longitude}`;
-
-            // Otvorenie nového okna/záložky (využitie predošlej lekcie)
             window.open(mapsUrl, '_blank');
             displayStatus(`✅ Poloha nájdená. Otváram Mapy s vyhľadávaním: ${finalQuery}.`, false);
-
-            // Vyčistenie AI vstupu po úspešnom vyhľadaní
             document.getElementById('ai-input-top').value = '';
             document.getElementById('ai-input-bottom').value = '';
         }
@@ -470,17 +524,11 @@
         function errorCallback(error) {
             spinner.style.display = 'none';
             let message = STATUS_FAIL_GPS;
-            
-            if (error.code === error.TIMEOUT) {
-                message = STATUS_FAIL_TIMEOUT;
-            } else if (error.code === error.PERMISSION_DENIED) {
-                 message = "❌ Prístup k polohe bol odmietnutý. Povoľte, prosím, lokalizačné služby pre túto stránku.";
-            }
-
+            if (error.code === error.TIMEOUT) { message = STATUS_FAIL_TIMEOUT; } 
+            else if (error.code === error.PERMISSION_DENIED) { message = "❌ Prístup k polohe bol odmietnutý. Povoľte, prosím, lokalizačné služby pre túto stránku."; }
             displayStatus(message, true);
         }
 
     </script>
 </body>
 </html>
-
