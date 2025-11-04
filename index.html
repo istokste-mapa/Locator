@@ -144,21 +144,20 @@
             statusElement.classList.add('error-message');
         }
 
-                function submitSearch(query, lat, lon) {
-            // Vytvorenie URL v staršom, ale univerzálnejšom formáte /search?q=query&ll=lat,lon
-            // LL (Latitude/Longitude) zaisťuje, že mapa sa vycentruje na správne miesto.
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}&center=${lat},${lon}`;
+        function submitSearch(query, lat, lon) {
+            // UNIVERZÁLNY FORMÁT: /search/QUERY/@LAT,LON,ZOOMz
+            // QUERY je zakódovaný vyhľadávaný termín
+            // @LAT,LON,15z zaistí vycentrovanie mapy na zistenú polohu (15z je úroveň priblíženia)
             
-            // KONTROLA: Uistíme sa, že URL je správne vytvorená
-            // console.log("Final URL:", mapsUrl);
-
-            // Použijeme priame presmerovanie cez okno, pretože formulár je blokovaný.
-            // Je to bezpečnejšie, keďže sme vyčistili cache.
-
+            // Opravená URL adresa pre Google Maps
+            const mapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(query)}/@${lat},${lon},15z`;
+            
             displayStatus(`Otváram Mapy pre ${query}...`);
-            window.open(mapsUrl, '_blank'); // Otvorí v novom okne/karte
+            // Používame window.open, ktoré je spoľahlivejšie ako formulár pre spustenie aplikácie Maps
+            window.open(mapsUrl, '_blank'); 
 
             setTimeout(() => {
+                // Po 1 sekunde sa vráti pôvodná správa
                 displayStatus('Vyberte kategóriu, ktorú chcete nájsť.'); 
             }, 1000);
         }
@@ -172,19 +171,23 @@
                         const lat = position.coords.latitude;
                         const lon = position.coords.longitude;
                         const accuracy = position.coords.accuracy;
+                        const km_accuracy = Math.round(accuracy / 1000); // Pre lepšie zobrazenie
 
-                        // KONTROLA PRESNOSTI
+                        // ZOBRAZENIE DEBUG INFORMÁCIÍ
+                        // Ak je toto Budapešť, vieme, že je problém s prehliadačom/OS.
+                        displayStatus(`Poloha zistená! (Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}. Presnosť: ± ${km_accuracy} km)`);
+
+
+                        // KONTROLA PRESNOSTI (Stále ju nechávame, ak by sa situácia zmenila)
                         if (accuracy > MAX_ACCURACY) {
-                            const km_accuracy = Math.round(accuracy / 1000);
                             displayError(`
                                 Poloha je príliš nepresná (± ${km_accuracy} km). 
-                                Vyhľadávanie je pozastavené. Skúste prosím zlepšiť signál (GPS/WiFi).
+                                Vyhľadávanie je pozastavené. Pre zlepšenie skúste ísť von alebo zapnúť GPS.
                             `);
                             return; // Zastaví vykonávanie
                         }
 
-                        // Ak je presné
-                        displayStatus(`Poloha zistená! Otváram Mapy...`);
+                        // Ak je poloha dostatočne presná (alebo falošne presná), pokračujeme
                         submitSearch(query, lat, lon);
 
                     },
@@ -213,4 +216,3 @@
     </script>
 </body>
 </html>
-
