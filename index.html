@@ -128,24 +128,43 @@
                         
                         statusElement.textContent = `Poloha zistená! Otváram Mapy...`;
 
-                        // POUŽITIE HTTPS A API FORMATU S OTVÁRANÍM CEZ SIMULÁCIU KLIKU
-                        const mapsUrl = `https://googleusercontent.com/maps.google.com/search?api=1&query=${encodeURIComponent(query)}&center=${lat},${lon}`;
+                        // 1. Vytvorenie čistej URL pre vyhľadávanie
+                        const mapsQuery = `${encodeURIComponent(query)}&center=${lat},${lon}`;
                         
-                        // --- Spoľahlivé otvorenie odkazu cez simuláciu kliku ---
-                        const link = document.createElement('a');
-                        link.href = mapsUrl;
-                        link.target = '_blank'; // Otvoriť v novom okne, čo niekedy obchádza blokovanie
-                        link.style.display = 'none';
-                        document.body.appendChild(link);
+                        // 2. Vytvorenie dynamického formulára na odoslanie na Google Mapy
+                        const form = document.createElement('form');
+                        form.action = `https://www.google.com/maps/search/`; // Najčistejšia možná akcia
+                        form.method = 'GET';
+                        form.target = '_blank';
+                        form.style.display = 'none';
 
-                        // Asynchrónne spustenie kliknutia
-                        setTimeout(() => {
-                           link.click();
-                        }, 50); // Veľmi krátke oneskorenie pre spustenie
+                        // Vloženie vyhľadávacieho dopytu ako poľa 'q'
+                        const inputQ = document.createElement('input');
+                        inputQ.type = 'hidden';
+                        inputQ.name = 'api'; // Aby bol formát query čistý
+                        inputQ.value = 1;
+                        form.appendChild(inputQ);
 
-                        // Vyčistenie
+                        const inputCenter = document.createElement('input');
+                        inputCenter.type = 'hidden';
+                        inputCenter.name = 'query';
+                        inputCenter.value = `${query}`;
+                        form.appendChild(inputCenter);
+
+                        const inputLL = document.createElement('input');
+                        inputLL.type = 'hidden';
+                        inputLL.name = 'center';
+                        inputLL.value = `${lat},${lon}`;
+                        form.appendChild(inputLL);
+
+
+                        // 3. Pripojenie formulára a okamžité odoslanie
+                        document.body.appendChild(form);
+                        form.submit();
+
+                        // 4. Vyčistenie
                         setTimeout(() => {
-                            document.body.removeChild(link);
+                            document.body.removeChild(form);
                             statusElement.textContent = 'Vyberte kategóriu, ktorú chcete nájsť.'; 
                         }, 1000);
 
