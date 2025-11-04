@@ -3,211 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokátor Služieb 🧭</title>
+    <title>Pokročilý Cestovateľský Lokátor</title>
     <style>
-        /* Základné štýly */
+        /* --- CSS Štýly pre Dizajn --- */
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding-top: 5vh;
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            text-align: center;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
         }
 
-        .container {
-            padding: 20px;
+        /* Sekcia Menu (Hamburger) */
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .menu-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .menu-overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .menu-overlay-content {
+            position: relative;
+            top: 10%;
             width: 100%;
-            max-width: 450px;
+            text-align: left;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .menu-overlay a {
+            padding: 15px 8px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #f1f1f1;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-overlay a:hover {
+            color: #3498db;
+            padding-left: 30px;
+        }
+
+        .menu-overlay .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* Obsah stránky */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         h1 {
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 30px;
+            text-align: center;
         }
 
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        /* Všeobecný štýl pre všetky tlačidlá */
-        .action-button {
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            background-color: #1a73e8; /* Default modrá */
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.1s;
-        }
-        
-        /* Špecifické farby pre kategórie */
-        .action-button.restaurants { background-color: #ea4335; } /* Červená - Reštaurácie */
-        .action-button.museums { background-color: #fbbc04; }    /* Žltá - Pamiatky */
-        .action-button.rentals { background-color: #34a853; }    /* Zelená - Požičovne */
-        .action-button.groceries { background-color: #4285f4; }   /* Modrá - Potraviny */
-        .action-button.parking { background-color: #7047a1; }     /* Fialová - Parkovisko */
-        .action-button.lodging { background-color: #a728b9; }     /* Fialová - Ubytovanie */
-        .action-button.camping { background-color: #38b2ac; }     /* Tyrkysová - Kempy */
-
-        .action-button:hover { opacity: 0.9; }
-        .action-button:active { transform: scale(0.98); }
-
-        .status-message {
-            color: #333;
-            font-size: 14px;
-            min-height: 20px;
-            margin-top: 30px;
-        }
-        
-        .error-message {
-            color: #ea4335;
-            font-weight: bold;
-        }
-
-        .pwa-tip {
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
             margin-top: 40px;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-size: 12px;
-            color: #555;
-            line-height: 1.4;
+            margin-bottom: 20px;
+            scroll-margin-top: 80px; /* Vytvorí priestor pri scrollovaní z menu */
         }
-        .pwa-tip strong {
-            display: block;
-            margin-bottom: 5px;
-            color: #1a73e8;
-            font-size: 14px;
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .action-btn {
+            padding: 15px 10px;
+            background-color: #ffffff;
+            color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .action-btn:hover {
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* AI Asistencia Štýly */
+        #ai-assistance {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #ai-assistance h2 {
+            border-bottom: none;
+            margin-top: 0;
+            color: #e74c3c;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        #ai-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #ai-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        #ai-actions button {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #search-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        #search-btn:hover {
+            background-color: #27ae60;
+        }
+
+        #voice-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        #voice-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Status správy */
+        #status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff3cd;
+            color: #856404;
+            display: none;
+            text-align: center;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsiveness pre úzke obrazovky */
+        @media (max-width: 600px) {
+            .btn-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Vyhľadať v okolí</h1>
-
-        <div class="button-group">
-            <button class="action-button restaurants" onclick="findPlaces('restaurants')">
-                🍽️ Reštaurácie
-            </button>
-            <button class="action-button museums" onclick="findPlaces('museums and historical places')">
-                🏛️ Pamiatky a Múzeá
-            </button>
-            <button class="action-button rentals" onclick="findPlaces('car rental, bike rental, scooter rental')">
-                🚗 Požičovne
-            </button>
-            <button class="action-button groceries" onclick="findPlaces('groceries and supermarkets')">
-                🛒 Potraviny a Obchody
-            </button>
-            <button class="action-button parking" onclick="findPlaces('parking lots and garages')">
-                🅿️ Parkovisko
-            </button>
-            <button class="action-button lodging" onclick="findPlaces('hotels and apartments for rent')">
-                🏨 Ubytovanie
-            </button>
-            <button class="action-button camping" onclick="findPlaces('campgrounds and RV parks')">
-                ⛺ Kempy
-            </button>
-        </div>
-
-        <p class="status-message" id="status">Vyberte kategóriu, ktorú chcete nájsť.</p>
-        
-        <div class="pwa-tip">
-            <strong>TIP: Používajte ako aplikáciu!</strong>
-            Pre najrýchlejší prístup kliknite v prehliadači na **tri bodky** (⋮) a zvoľte **"Pridať na plochu"**. Vytvoríte si tak ikonu pre okamžité spustenie.
+    <div id="myNav" class="menu-overlay">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <div class="menu-overlay-content">
+            <a href="#basic" onclick="closeNav()">Základné Potreby</a>
+            <a href="#service" onclick="closeNav()">Servis a Údržba</a>
+            <a href="#treasures" onclick="closeNav()">Cestovateľské Poklady</a>
+            <div style="height: 50px;"></div>
+            <a href="#ai-assistance-section" onclick="closeNav()">AI Asistencia</a>
         </div>
     </div>
 
+    <div class="menu-btn" onclick="openNav()">MENU</div>
+
+    <div class="container">
+        <h1>Pokročilý Cestovateľský Lokátor</h1>
+        
+        <div class="spinner" id="loading-spinner"></div>
+        <div id="status"></div>
+        
+        <section id="ai-assistance-section-top">
+            <div id="ai-assistance">
+                <h2>AI ASISTENCIA</h2>
+                <input type="text" id="ai-input-top" placeholder="Zadajte, čo hľadáte (napr. Čínska reštaurácia)...">
+                <div id="ai-actions">
+                    <button id="search-btn-top">Vyhľadať (Text)</button>
+                    <button id="voice-btn-top">Hlasový Vstup</button>
+                </div>
+            </div>
+        </section>
+
+        <h2 id="basic">Základné Potreby</h2>
+        <div class="btn-grid">
+            <button class="action-btn" data-query="gas station and petrol pump">⛽ Čerpacia stanica</button>
+            <button class="action-btn" data-query="restaurant and local dining">🍽️ Reštaurácia</button>
+            <button class="action-btn" data-query="supermarket and grocery store">🛒 Supermarket</button>
+            <button class="action-btn" data-query="bank or ATM">🏧 Bankomat / Banka</button>
+        </div>
+
+        <h2 id="service">Servis a Údržba</h2>
+        <div class="btn-grid">
+            <button class="action-btn" data-query="car and motorcycle repair shop">🔧 Auto/Moto Servis</button>
+            <button class="action-btn" data-query="caravan and camper repair service">🚐 Karavan Servis</button>
+            <button class="action-btn" data-query="public toilet and restroom">🚽 WC</button>
+            <button class="action-btn" data-query="public shower and bathing facility">🚿 Sprcha</button>
+            <button class="action-btn" data-query="drinking water fountain and public tap">💧 Pitná voda</button>
+            <button class="action-btn" data-query="public power outlet and charging station">🔌 Verejné zásuvky</button>
+        </div>
+
+        <h2 id="treasures">Cestovateľské Poklady</h2>
+        <div class="btn-grid">
+            <button class="action-btn" data-query="local neighborhood tavern and pub">🍺 Autentický Pub</button>
+            <button class="action-btn" data-query="farmers market and local produce">🧺 Miestny Trh</button>
+            <button class="action-btn" data-query="local bakery and traditional patisserie">🍰 Miestna Cukráreň</button>
+            <button class="action-btn" data-query="quiet beach and secluded swimming area">🏖️ Pláž ďaleko od ľudí</button>
+            <button class="action-btn" data-query="parking lot in forest or nature area">🅿️ Parkovisko v Prírode</button>
+            <button class="action-btn" data-query="quiet local park and green space">🌳 Tichý Park</button>
+        </div>
+        
+        <section id="ai-assistance-section-bottom">
+            <div id="ai-assistance">
+                <h2>AI ASISTENCIA</h2>
+                <input type="text" id="ai-input-bottom" placeholder="Zadajte, čo hľadáte (napr. Čínska reštaurácia)...">
+                <div id="ai-actions">
+                    <button id="search-btn-bottom">Vyhľadať (Text)</button>
+                    <button id="voice-btn-bottom">Hlasový Vstup</button>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
     <script>
-        const statusElement = document.getElementById('status');
-        const MAX_ACCURACY = 5000; // Maximálna akceptovateľná nepresnosť v metroch (5 km)
+        // --- JavaScript Funkcie ---
 
-        function displayStatus(message) {
-            statusElement.textContent = message;
-            statusElement.classList.remove('error-message');
+        const STATUS_OK = "Získavam polohu...";
+        const STATUS_FAIL_GPS = "❌ Nepodarilo sa získať presnú polohu. Skúste znova alebo sa presuňte von.";
+        const STATUS_FAIL_ACCURACY = "⚠️ Poloha bola získaná, ale je príliš nepresná (presnosť > 5 km). Skúste znova.";
+        const STATUS_FAIL_TIMEOUT = "⏳ Časový limit vypršal (10 sekúnd). Skúste znova, prosím.";
+
+        const statusDiv = document.getElementById('status');
+        const spinner = document.getElementById('loading-spinner');
+        let currentQuery = '';
+        const TIMEOUT_MS = 10000;
+        const MAX_ACCURACY = 5000; // 5 km v metroch
+
+        // --- Navigačné Menu Funkcie ---
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
         }
 
-        function displayError(message) {
-            statusElement.textContent = message;
-            statusElement.classList.add('error-message');
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
         }
 
-        function submitSearch(query, lat, lon) {
-            // UNIVERZÁLNY FORMÁT: /search/QUERY/@LAT,LON,ZOOMz
-            // Opravená URL adresa pre Google Maps s univerzálnym formátom /search/
-            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}/@${lat},${lon},15z`;
-            
-            displayStatus(`Otváram Mapy pre ${query}...`);
-            window.open(mapsUrl, '_blank'); 
+        // Pridanie Event Listenerov pre Tlačidlá
+        document.querySelectorAll('.action-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                currentQuery = this.getAttribute('data-query');
+                findLocationAndSearch();
+            });
+        });
 
-            setTimeout(() => {
-                displayStatus('Vyberte kategóriu, ktorú chcete nájsť.'); 
-            }, 1000);
+        // Hladké scrollovanie (pre menu)
+        document.querySelectorAll('.menu-overlay-content a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- AI Asistencia Funkcie (Textové vyhľadávanie) ---
+        function setupAiSearch(inputId, searchBtnId) {
+            document.getElementById(searchBtnId).addEventListener('click', function() {
+                currentQuery = document.getElementById(inputId).value.trim();
+                if (currentQuery) {
+                    findLocationAndSearch();
+                } else {
+                    displayStatus("Zadajte, prosím, hľadaný výraz do poľa AI Asistencie.", true);
+                }
+            });
         }
-
-        function findPlaces(query) {
-            displayStatus(`Zisťujem polohu pre "${query}"... 🛰️`);
-
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        const accuracy = position.coords.accuracy;
-                        const km_accuracy = Math.round(accuracy / 1000); 
-
-                        // ZOBRAZENIE POLOHY
-                        displayStatus(`Poloha zistená! (Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}. Presnosť: ± ${km_accuracy} km)`);
+        
+        setupAiSearch('ai-input-top', 'search-btn-top');
+        setupAiSearch('ai-input-bottom', 'search-btn-bottom');
 
 
-                        // KONTROLA PRESNOSTI (Poloha s presnosťou nad 5 km sa neakceptuje)
-                        if (accuracy > MAX_ACCURACY) {
-                            displayError(`
-                                Poloha je príliš nepresná (± ${km_accuracy} km). 
-                                Vyhľadávanie je pozastavené. Pre zlepšenie skúste ísť von alebo zapnúť GPS.
-                            `);
-                            return; // Zastaví vykonávanie
-                        }
+        // --- Hlasový Vstup Funkcie ---
+        
+        // Funkcia sa pripája k obom tlačidlám Hlasového Vstupu
+        document.getElementById('voice-btn-top').addEventListener('click', () => startVoiceRecognition('ai-input-top'));
+        document.getElementById('voice-btn-bottom').addEventListener('click', () => startVoiceRecognition('ai-input-bottom'));
 
-                        // Ak je poloha dostatočne presná, pokračujeme
-                        submitSearch(query, lat, lon);
 
-                    },
-                    (error) => {
-                        // Spracovanie chýb
-                        let errorMessage = "Nastala neznáma chyba.";
-                        if (error.code === error.PERMISSION_DENIED) {
-                            errorMessage = "Prístup k polohe zamietnutý. Povoľte polohu v nastaveniach prehliadača.";
-                        } else if (error.code === error.POSITION_UNAVAILABLE) {
-                            errorMessage = "Informácie o polohe nie sú dostupné. Skúste to znova neskôr.";
-                        } else if (error.code === error.TIMEOUT) {
-                            // Upravená správa pre časový limit
-                            errorMessage = "Vypršal časový limit (10 sekúnd). Poloha nebola zistená. Skúste ísť na voľné priestranstvo.";
-                        }
-                        displayError(`Chyba: ${errorMessage}`);
-                    },
-                    {
-                        enableHighAccuracy: true,
-                        timeout: 10000, // ZVÝŠENÉ NA 10 SEKÚND
-                        maximumAge: 0
-                    }
-                );
-            } else {
-                displayError("Váš prehliadač nepodporuje geolokáciu.");
+        function startVoiceRecognition(targetInputId) {
+            if (!('webkitSpeechRecognition' in window)) {
+                displayStatus("❌ Váš prehliadač nepodporuje Hlasový vstup (Web Speech API). Použite, prosím, textové zadávanie.", true);
+                return;
             }
+
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'sk-SK'; // Nastavenie jazyka na slovenčinu
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = function() {
+                displayStatus("🎤 Počúvam... Prosím, hovorte zreteľne.", false, true);
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById(targetInputId).value = transcript;
+                displayStatus("✅ Rozpoznaný text: " + transcript, false);
+                currentQuery = transcript.trim();
+                findLocationAndSearch();
+            };
+
+            recognition.onerror = function(event) {
+                let errorMessage = "❌ Chyba pri rozpoznávaní hlasu. Skúste znova.";
+                if (event.error === 'not-allowed') {
+                    errorMessage = "❌ Odmietnutý prístup k mikrofónu. Povoľte, prosím, mikrofón v nastaveniach prehliadača pre túto stránku.";
+                }
+                displayStatus(errorMessage, true);
+            };
+
+            recognition.onend = function() {
+                if (statusDiv.style.display === 'block' && statusDiv.textContent.includes("Počúvam")) {
+                     displayStatus("Počúvanie ukončené. Spracovávam...");
+                }
+            };
+            
+            recognition.start();
         }
+
+        // --- Geolokácia a Vyhľadávanie ---
+
+        function displayStatus(message, isError = false, showSpinner = false) {
+            statusDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            statusDiv.style.backgroundColor = isError ? '#f8d7da' : '#d4edda';
+            statusDiv.style.color = isError ? '#721c24' : '#155724';
+            spinner.style.display = showSpinner ? 'block' : 'none';
+        }
+
+        function findLocationAndSearch() {
+            displayStatus(STATUS_OK, false, true); // Zobraziť loading
+            
+            navigator.geolocation.getCurrentPosition(
+                successCallback,
+                errorCallback,
+                {
+                    enableHighAccuracy: true,
+                    timeout: TIMEOUT_MS,
+                    maximumAge: 0
+                }
+            );
+        }
+
+        function successCallback(position) {
+            spinner.style.display = 'none';
+
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const accuracy = position.coords.accuracy;
+            
+            // Kontrola Presnosti
+            if (accuracy > MAX_ACCURACY) {
+                displayStatus(STATUS_FAIL_ACCURACY + ` (Presnosť: ${Math.round(accuracy)}m)`, true);
+                return;
+            }
+
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentQuery)}&ll=${latitude},${longitude}`;
+
+            // Používame window.open na otvorenie nového okna/záložky s vyhľadávaním na mapách
+            window.open(mapsUrl, '_blank');
+            displayStatus(`✅ Poloha nájdená. Otváram Mapy s vyhľadávaním: ${currentQuery}.`, false);
+
+            // Vyčistenie AI vstupu po úspešnom vyhľadaní
+            document.getElementById('ai-input-top').value = '';
+            document.getElementById('ai-input-bottom').value = '';
+        }
+
+        function errorCallback(error) {
+            spinner.style.display = 'none';
+            let message = STATUS_FAIL_GPS;
+            
+            if (error.code === error.TIMEOUT) {
+                message = STATUS_FAIL_TIMEOUT;
+            } else if (error.code === error.PERMISSION_DENIED) {
+                 message = "❌ Prístup k polohe bol odmietnutý. Povoľte, prosím, lokalizačné služby pre túto stránku.";
+            }
+
+            displayStatus(message, true);
+        }
+
     </script>
 </body>
 </html>
