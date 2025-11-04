@@ -149,10 +149,43 @@
         #ai-assistance h2 {
             border-bottom: none;
             margin-top: 0;
-            color: #e74c3c;
+            color: #3498db; /* Zmena farby nadpisu na modrú */
             text-align: center;
             font-size: 1.2em; 
             line-height: 1.4;
+        }
+        
+        /* Nové/Upravené štýly pre AI input a tlačidlá */
+        #ai-input-top, #ai-input-bottom {
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 10px; 
+            border: 2px solid #ccc; 
+            border-radius: 5px; 
+            box-sizing: border-box; 
+            font-size: 16px; 
+        }
+
+        #ai-actions { 
+            display: flex; 
+            gap: 10px; 
+        }
+        
+        #ai-actions button { 
+            flex-grow: 1; 
+            padding: 12px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+            background-color: #3498db; /* Farba tlačidiel zmenená na modrú */
+            color: white;
+        }
+
+        #ai-actions button:hover {
+            background-color: #2980b9; 
         }
         
         /* Kalkulačka a Dôvera štýly */
@@ -538,6 +571,7 @@
     </script>
 </body>
 </html>
+
 
 
 
