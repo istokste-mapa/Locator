@@ -3,58 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Lokalizátor a Globálny Asistent</title>
+    <title>AI Asistent (Lokalizácia)</title>
     <style>
         /* --- Importované a Upravené CSS Štýly --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5; /* Konzistentné pozadie */
+            background-color: #f0f2f5;
             color: #333;
             overflow-x: hidden;
-            text-align: center; /* Pridané pre vycentrovanie hlavného kontajnera */
+            text-align: center; 
+            padding-top: 80px; /* Priestor pre menu-btn */
         }
 
+        /* --- Sekcia Menu (Hamburger) - IMPORTED --- */
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .menu-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .menu-overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .menu-overlay-content {
+            position: relative;
+            top: 10%;
+            width: 100%;
+            text-align: left;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .menu-overlay a {
+            padding: 15px 8px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #f1f1f1;
+            display: block;
+            transition: 0.3s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-overlay a:hover {
+            color: #3498db;
+            padding-left: 30px;
+        }
+
+        .menu-overlay .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* --- Koniec importovaných štýlov menu --- */
+
+
         .container {
-            max-width: 900px; /* Šírka z hlavnej stránky */
-            margin: 20px auto; /* Vycentrovanie + malý odstup od hora/spodu */
+            max-width: 900px; 
+            margin: 0 auto 20px; /* Vycentrovanie + odstup */
             padding: 20px;
-            /* Používame štýl z vašej #ai-assistance sekcie */
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            color: #2c3e50; /* Farba nadpisu z vašej hlavnej stránky */
+            color: #2c3e50;
             margin-bottom: 30px;
             text-align: center;
         }
 
         /* Štýl pre Status správu */
         .status {
-            font-weight: 600; /* Jemné zvýraznenie */
+            font-weight: 600; 
             margin-bottom: 20px;
             color: #28a745; 
             font-size: 1.1em;
         }
         
-        /* Spoločný štýl pre všetky akčné tlačidlá v tejto sekcii */
+        /* Spoločný štýl pre všetky akčné tlačidlá */
         .ai-action-btn {
             padding: 12px 20px; 
             border: none; 
-            border-radius: 8px; /* Konzistentný border-radius */
+            border-radius: 8px; 
             font-size: 16px; 
             font-weight: 600; 
             cursor: pointer; 
             transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Jemný tieň */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
         }
         
-        /* Tlačidlo Lokalizovať */
         #localizeButton {
-            background-color: #007bff; /* Primárna modrá farba */
+            background-color: #007bff; 
             color: white;
             flex-grow: 1;
         }
@@ -64,9 +133,8 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Tlačidlo Hlas */
         #speakButton {
-            background-color: #3498db; /* Sekundárna modrá pre konzistenciu s AI */
+            background-color: #3498db; 
             color: white;
             flex-grow: 1;
         }
@@ -76,31 +144,28 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Kontajner pre akčné tlačidlá */
         #action-buttons { 
             display: flex; 
-            gap: 15px; /* Väčší medzera medzi tlačidlami */
+            gap: 15px; 
             margin-bottom: 20px;
         }
 
-        /* Box pre výstup AI */
         .output-box {
             margin-top: 20px;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 8px;
-            background-color: #f9f9f9; /* Svetlejšie pozadie výstupu */
+            background-color: #f9f9f9; 
             text-align: left;
             min-height: 120px;
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
-        /* Štýl pre odkaz na vyhľadávanie */
         a.search-link { 
             display: inline-block; 
             margin-top: 15px; 
             padding: 10px 15px; 
-            background-color: #ffc107; /* Oranžová/žltá farba pre akciu (warning/attention) */
+            background-color: #ffc107; 
             color: #333; 
             text-decoration: none; 
             border-radius: 5px; 
@@ -111,10 +176,22 @@
         a.search-link:hover {
             background-color: #e0a800;
         }
-
     </style>
 </head>
 <body>
+
+<div class="menu-btn" onclick="openNav()">MENU</div>
+
+<div id="myNav" class="menu-overlay">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+    
+    <div class="menu-overlay-content">
+        <a href="index.html">Domov / Lokátor</a>
+        <a href="kalkulacka.html">Euro Kalkulačka</a>
+        <a href="doprava.html">Odkazy na Dopravu (Vlaky, Trajekty...)</a>
+        <a href="ai_lokalizator.html">AI Asistent (Lokalizácia)</a>
+        </div>
+</div>
 
 <div class="container">
     <h1>🌍 AI Lokalizátor a Globálny Asistent</h1>
@@ -136,12 +213,22 @@
 let lastSpokenText = "";
 let lastCityName = ""; 
 
+// --- FUNKCIE PRE OTVORENIE/ZATVORENIE MENU ---
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+// ---------------------------------------------
+
+
 // --- FUNKCIA PRE HLASOVÝ VÝSTUP (Text-to-Speech) ---
 function speakText(text) {
     if ('speechSynthesis' in window) {
         lastSpokenText = text;
         const synthesis = window.speechSynthesis;
-        // Zrušíme všetky predchádzajúce reči, ak je nejaká v rade
         synthesis.cancel(); 
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'sk-SK'; 
@@ -154,7 +241,6 @@ function speakText(text) {
 }
 
 function speakTextFromOutput() {
-    // Opätovné prehranie naposledy vygenerovaného textu
     if (lastSpokenText) {
         speakText(lastSpokenText);
     }
@@ -208,7 +294,6 @@ async function reverseGeocode(lat, lon) {
         let cityName = "neznáme mesto/oblasť";
         
         if (data.address) {
-            // Skúsime nájsť mesto, obec alebo krajinu ako fallback
             cityName = data.address.city || data.address.town || data.address.village || data.address.country || cityName;
             lastCityName = cityName;
             
@@ -220,26 +305,22 @@ async function reverseGeocode(lat, lon) {
         }
 
     } catch (error) {
-        // Zaznamenanie chyby pri komunikácii s Nominatim
         const errorMsg = `Chyba pri Nominatim: Nebolo možné zistiť presný názov mesta.`;
         updateStatus(errorMsg, true);
-        generateAISearchLink("Vaša aktuálna poloha", errorMsg); // Fallback na "aktuálna poloha"
+        generateAISearchLink("Vaša aktuálna poloha", errorMsg); // Fallback
     }
 }
 
 // --- GENERUJ AI VÝSTUP A ODKAZ NA VYHĽADÁVANIE ---
 function generateAISearchLink(cityName, error = "") {
-    // Vygenerujeme odkaz, ktorý vedie na Google Search
     const searchTopic = `Turistické atrakcie a zaujímavosti v meste ${cityName}`;
     const encodedTopic = encodeURIComponent(searchTopic);
     const searchLink = `https://www.google.com/search?q=${encodedTopic}`;
     
-    // Text pre hlasový výstup
     const introText = error 
         ? `Dobrý deň. Zistil som, že sa nachádzate v ${cityName}, ale neviem zistiť presné detaily. Pre vyhľadanie informácií kliknite na odkaz.`
         : `Dobrý deň. Podľa aktuálnej polohy sa nachádzate v meste ${cityName}. Pre zistenie aktuálnych turistických informácií a najnavštevovanejších miest v okolí, kliknite na odkaz, ktorý pre vás AI asistent vygeneroval.`;
         
-    // HTML obsah pre zobrazenie
     const finalOutputHTML = `
         <p><strong>Mesto/Oblasť:</strong> ${cityName}</p>
         <p><strong>Správa od AI Asistenta:</strong> ${introText}</p>
