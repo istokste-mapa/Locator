@@ -324,31 +324,33 @@ function generateAISearchLink(cityName, error = "") {
     speakText(introText);
 }
 
-
-// --- NOVÁ FUNKCIA: FOTOGRAFICKÁ LOGIKA (Opravená URL) ---
+// --- NOVÁ, ROZŠÍRENÁ FUNKCIA: VYHĽADÁVANIE OBRÁZKOV PODĽA MESTA ---
 function startPhotoSearch() {
-    // Kontrola, či sú súradnice uložené
-    if (window.currentLat === null || window.currentLon === null) {
-        alert("Najprv musíte kliknúť na 'Lokalizovať a Zistiť Mesto', aby sme získali polohu!");
+    
+    // 1. KONTROLA
+    if (!lastCityName || lastCityName === "neznáme mesto/oblasť") {
+        alert("Najprv kliknite na 'Lokalizovať a Zistiť Mesto' a počkajte, kým AI Asistent zistí názov mesta.");
         return;
     }
 
-    const lat = window.currentLat;
-    const lon = window.currentLon;
+    const cityName = lastCityName;
     
-    // 💡 NOVÝ ODKAZ: Zameria sa na dané súradnice a požiada o fotky.
-    // Parameter tbm=isch nie je kompatibilný s Mapami, ale tento tvar s miere=pics je niekedy úspešnejší.
-    // Najspoľahlivejší spôsob, ako nájsť fotky v okolí, je zamerať sa na blízky bod záujmu, ale zostaneme pri súradniciach.
-
-    // TENTO TVAR by mal načítať Mapy s cieľom na súradnice, kde by ste mali vidieť fotky vľavo.
-    const photoSearchURL = `https://www.google.com/maps/@${lat},${lon},18z/data=!3m1!1e1`;
-
-    window.open(photoSearchURL, '_blank');
+    // 2. GENERÁCIA VYHĽADÁVACIEHO REŤAZCA
+    // Vyhľadávací dotaz bude napr.: "Fotografie zaujímavosti Viedeň"
+    const searchTopic = `Fotografie zaujímavosti okolie ${cityName}`; 
+    const encodedTopic = encodeURIComponent(searchTopic);
     
-    updateStatus(`Odkaz na fotografie spustený v novej záložke.`);
+    // 3. ODKAZ NA GOOGLE IMAGES (tbm=isch)
+    const googleImagesURL = `https://www.google.com/search?tbm=isch&q=${encodedTopic}`;
+
+    // 4. OTVORENIE
+    window.open(googleImagesURL, '_blank');
+    
+    updateStatus(`Vyhľadávanie fotografií v okolí spustený v novej záložke.`);
 }
 // ---------------------------------------------
     
+
 </script>
 
 </body>
