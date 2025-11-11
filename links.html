@@ -13,12 +13,45 @@
         .back-btn { display: inline-block; padding: 10px 15px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 8px; margin-bottom: 30px; font-weight: bold; }
         .back-btn:hover { background-color: #c0392b; }
 
+        /* VŠEOBECNÝ ŠTÝL PRE ODKAZOVÉ SKUPINY */
         .link-group { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); margin-bottom: 30px; }
         .link-group h3 { color: #2c3e50; margin-top: 0; }
         .link-group a { display: block; padding: 10px 0; border-bottom: 1px dotted #eee; text-decoration: none; color: #007bff; font-weight: 500; transition: color 0.2s; }
         .link-group a:last-child { border-bottom: none; }
         .link-group a:hover { color: #0056b3; }
         .link-group span.note { font-size: 0.9em; color: #888; margin-left: 10px; }
+
+        /* ŠPECIFICKÉ ŠTÝLY PRE TABUĽKU (Pre lepšiu čitateľnosť) */
+        .toll-table {
+            width: 100%;
+            border-collapse: collapse;
+            /* Tabuľka už bude v link-group, takže netreba shadow/background */
+            font-size: 0.9em;
+        }
+
+        .toll-table th, .toll-table td {
+            padding: 10px;
+            border: 1px solid #ddd; /* Jemné ohraničenie */
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .toll-table thead th {
+            background-color: #eaf4ff; /* Svetlo modré pozadie pre hlavičku (ladí s h2/link farbou) */
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .toll-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9; /* Svetlý zebra efekt */
+        }
+
+        .toll-table a {
+            display: inline; /* Aby odkazy v tabuľke nevyplnili celú bunku */
+            padding: 0;
+            border-bottom: none;
+        }
+
     </style>
 </head>
 <body>
@@ -27,94 +60,90 @@
 
         <h1>Užitočné Cestovné Odkazy</h1>
 
-        
-    <h2>🚗 Diaľničné a Mýtne Poplatky (Prehľad)</h2>
-    
-    <p>Prehľad typov diaľničných poplatkov, ktoré sú povinné pre najbežnejšie kategórie vozidiel v okolitých a tranzitných krajinách.
-       *Pre presnú cenu a definitívnu kategóriu vždy navštívte oficiálny predajný portál!</p>
+        <div class="link-group">
+            <h2>🚗 Diaľničné a Mýtne Poplatky</h2>
+            
+            <p>Prehľad typov poplatkov pre najbežnejšie kategórie vozidiel. *Pre presnú cenu vždy navštívte oficiálny portál!</p>
 
-    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-        <thead>
-            <tr style="background-color: #f2f2f2;">
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Krajina</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Vozidlo do 3.5t<br>(Osobné / Dodávka)</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Vozidlo + Príves / Autokaravan<br>(> 3.5t alebo špeciálne kategórie)</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Typ poplatku / Známka</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇸🇰 **Slovensko** (<a href="https://eznamka.sk/">EZnamka</a>)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Jedna známka** (do 3.5t)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Dve známky** (ak súprava > 3.5t) alebo **e-mýto** (vozidlo > 3.5t).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Elektronická diaľničná známka (E-Vignette)</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇨🇿 **Česko** (<a href="https://edalnice.cz/">eDálnice</a>)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Jedna známka** (do 3.5t)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Známka len na ťažné vozidlo. **Príves je bez poplatku.**</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Elektronická diaľničná známka (E-Vignette)</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇦🇹 **Rakúsko** (<a href="https://shop.asfinag.at/">ASFINAG</a>)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Jedna známka** (do 3.5t)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Známka len na ťažné vozidlo. **Autokaravan/Vozidlo > 3.5t** platí **GO-Box** (e-mýto).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Elektronická diaľničná známka (E-Vignette) / GO-Box</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇭🇺 **Maďarsko** (<a href="https://ematrica.nemzetiutdij.hu/">NÚSZ</a>)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**D1** (Auto do 7 miest), **D2** (Dodávka/Autokaravan/Auto > 7 miest).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">D2 + príves platí známku **U**. D1 + príves stačí D1.</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Elektronická diaľničná známka (D1, D2, U)</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇸🇮 **Slovinsko** (<a href="https://evinjeta.dars.si/">DARS</a>)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Trieda 2A** (výška nad nápravou < 1.3 m).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Trieda 2B** (dodávky, karavany s výškou nad nápravou > 1.3 m) alebo e-mýto (> 3.5t).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Elektronická diaľničná známka (E-Vinjeta)</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇵🇱 **Poľsko** (<a href="https://etoll.gov.pl/">e-Toll</a>)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Platba na bránach, väčšinou **žiadna celoštátna známka** (okrem súkromných úsekov).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Vozidlá nad 3.5t platia **e-Toll**.</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Mýto na bránach / e-Toll</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇩🇪 **Nemecko**</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Bez poplatku** (Diaľnice sú bezplatné pre osobné autá).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">**Bez poplatku**. Iba ťažké nákladné vozidlá platia mýto.</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Bez poplatku / Mýto pre nákladné vozidlá</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇫🇷 **Francúzsko**</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Platba mýta na bránach alebo cez palubnú jednotku.</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Platba mýta na bránach (kategória 2, 3 alebo 4 podľa veľkosti/výšky).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Mýtne brány / Télépéage</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">🇪🇸 **Španielsko**</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Platba mýta na bránach (postupne rušené).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Platba mýta na bránach (kategória ľahké/ťažké vozidlá).</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">Mýtne brány (Autopistas)</td>
-            </tr>
-        </tbody>
-    </table>
-    <hr style="margin-top: 30px; margin-bottom: 20px;">
+            <table class="toll-table">
+                <thead>
+                    <tr>
+                        <th>Krajina</th>
+                        <th>Vozidlo do 3.5t<br>(Osobné / Dodávka)</th>
+                        <th>Vozidlo + Príves / Autokaravan<br>(> 3.5t alebo špeciálne kategórie)</th>
+                        <th>Typ poplatku / Systém</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🇸🇰 **Slovensko**</td>
+                        <td>**Jedna známka** (do 3.5t)</td>
+                        <td>**Dve známky** (ak súprava > 3.5t) alebo **e-mýto** (vozidlo > 3.5t).</td>
+                        <td>Elektronická diaľničná známka (E-Vignette)</td>
+                    </tr>
+                    <tr>
+                        <td>🇨🇿 **Česko**</td>
+                        <td>**Jedna známka** (do 3.5t)</td>
+                        <td>Známka len na ťažné vozidlo. **Príves je bez poplatku.**</td>
+                        <td>Elektronická diaľničná známka (E-Vignette)</td>
+                    </tr>
+                    <tr>
+                        <td>🇦🇹 **Rakúsko**</td>
+                        <td>**Jedna známka** (do 3.5t)</td>
+                        <td>Známka len na ťažné vozidlo. **Autokaravan/Vozidlo > 3.5t** platí **GO-Box** (e-mýto).</td>
+                        <td>E-Vignette / GO-Box</td>
+                    </tr>
+                    <tr>
+                        <td>🇭🇺 **Maďarsko**</td>
+                        <td>**D1** (Auto do 7 miest), **D2** (Dodávka/Karavan/Auto > 7 miest).</td>
+                        <td>D2 + príves platí známku **U**. D1 + príves stačí D1.</td>
+                        <td>Elektronická diaľničná známka (D1, D2, U)</td>
+                    </tr>
+                    <tr>
+                        <td>🇸🇮 **Slovinsko**</td>
+                        <td>**Trieda 2A** (výška nad nápravou &lt; 1.3 m).</td>
+                        <td>**Trieda 2B** (dodávky, karavany s výškou nad nápravou > 1.3 m) alebo e-mýto (> 3.5t).</td>
+                        <td>Elektronická diaľničná známka (E-Vinjeta)</td>
+                    </tr>
+                    <tr>
+                        <td>🇵🇱 **Poľsko**</td>
+                        <td>Platba na bránach, väčšinou **žiadna celoštátna známka** (okrem súkromných úsekov).</td>
+                        <td>Vozidlá nad 3.5t platia **e-Toll**.</td>
+                        <td>Mýto na bránach / e-Toll</td>
+                    </tr>
+                    <tr>
+                        <td>🇩🇪 **Nemecko**</td>
+                        <td>**Bez poplatku** (Diaľnice sú bezplatné pre osobné autá).</td>
+                        <td>**Bez poplatku**. Iba ťažké nákladné vozidlá platia mýto.</td>
+                        <td>Bez poplatku / Mýto pre nákladné vozidlá</td>
+                    </tr>
+                    <tr>
+                        <td>🇫🇷 **Francúzsko**</td>
+                        <td>Platba mýta na bránach alebo cez palubnú jednotku.</td>
+                        <td>Platba mýta na bránach (kategória 2, 3 alebo 4 podľa veľkosti/výšky).</td>
+                        <td>Mýtne brány / Télépéage</td>
+                    </tr>
+                    <tr>
+                        <td>🇪🇸 **Španielsko**</td>
+                        <td>Platba mýta na bránach (postupne rušené).</td>
+                        <td>Platba mýta na bránach (kategória ľahké/ťažké vozidlá).</td>
+                        <td>Mýtne brány (Autopistas)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <h3>Oficiálne Portály pre Diaľničné Známky (Do 3.5t)</h3>
-    <ul style="list-style-type: none; padding: 0; text-align: left;">
-        <li style="margin-bottom: 8px;"><a href="https://eznamka.sk/">🇸🇰 Slovensko (EZnamka)</a></li>
-        <li style="margin-bottom: 8px;"><a href="https://edalnice.cz/">🇨🇿 Česko (eDálnice)</a></li>
-        <li style="margin-bottom: 8px;"><a href="https://shop.asfinag.at/">🇦🇹 Rakúsko (ASFINAG)</a></li>
-        <li style="margin-bottom: 8px;"><a href="https://ematrica.nemzetiutdij.hu/">🇭🇺 Maďarsko (NÚSZ)</a></li>
-        <li style="margin-bottom: 8px;"><a href="https://evinjeta.dars.si/">🇸🇮 Slovinsko (DARS)</a></li>
-        <li style="margin-bottom: 8px;"><a href="https://etoll.gov.pl/">🇵🇱 Poľsko (e-Toll)</a> - primárne pre > 3.5t, platba za úseky.</li>
-    </ul>
-
+        <div class="link-group">
+            <h3>🌐 Oficiálne Portály pre Diaľničné Známky (Do 3.5t)</h3>
+            <a href="https://eznamka.sk/" target="_blank">🇸🇰 Slovensko (EZnamka)</a>
+            <a href="https://edalnice.cz/" target="_blank">🇨🇿 Česko (eDálnice)</a>
+            <a href="https://shop.asfinag.at/" target="_blank">🇦🇹 Rakúsko (ASFINAG)</a>
+            <a href="https://ematrica.nemzetiutdij.hu/" target="_blank">🇭🇺 Maďarsko (NÚSZ)</a>
+            <a href="https://evinjeta.dars.si/" target="_blank">🇸🇮 Slovinsko (DARS)</a>
+            <a href="https://etoll.gov.pl/" target="_blank">🇵🇱 Poľsko (e-Toll) <span class="note">| Primárne pre > 3.5t, platba za úseky.</span></a>
         </div>
         
-        
-       <h2>🚌 Lístky na Trajekty, Vlaky a Autobusy</h2>
+        <h2>🚌 Lístky na Trajekty, Vlaky a Autobusy</h2>
         
         <div class="link-group">
             <h3>Vlaky (Slovensko, Okolie a Západná Európa)</h3>
