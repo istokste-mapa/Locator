@@ -19,8 +19,7 @@
         .back-btn { display: inline-block; padding: 10px 15px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 8px; margin-bottom: 30px; font-weight: bold; }
         .back-btn:hover { background-color: #c0392b; }
 
-
-        /* --- Sekcia Menu (Hamburger) - IMPORTED (Štýly pre menu-overlay vynechané pre stručnosť) --- */
+        /* --- Sekcia Menu (Hamburger) - ZÁKLAD --- */
         .menu-btn {
             position: fixed;
             top: 20px;
@@ -40,7 +39,8 @@
         .menu-btn:hover {
             background-color: #0056b3;
         }
-        /* ... Zvyšok menu-overlay štýlov ... */
+
+        /* ... Zvyšok menu-overlay štýlov (vynechané pre stručnosť) ... */
 
 
         .container {
@@ -106,22 +106,49 @@
             margin-bottom: 20px;
         }
 
-        /* NOVÝ ŠTÝL PRE TLAČIDLO FOTIEK */
-        #photo-action-buttons {
-             margin-top: 15px; 
-        }
-
+        /* FOTO TLAČIDLO */
         #photoSearchButton {
-            background-color: #f39c12; /* Oranžová farba pre objavy */
+            background-color: #f39c12; 
             color: white;
-            width: 100%; /* Rozšírenie na plnú šírku */
+            width: 100%; 
         }
 
         #photoSearchButton:hover {
             background-color: #e67e22;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        /* KONIEC NOVÝCH ŠTÝLOV */
+
+        /* --- NOVÉ ŠTÝLY PRE LOKÁLNU DOPRAVU --- */
+        #local-transport-buttons { 
+            display: flex; 
+            justify-content: space-between;
+            gap: 4%; 
+            margin-top: 15px; 
+            margin-bottom: 20px;
+        }
+
+        #mhdSearchButton {
+            background-color: #2ecc71; /* Zelená pre MHD/Cestovné poriadky */
+            color: white;
+            width: 48%; 
+        }
+
+        #mhdSearchButton:hover {
+            background-color: #27ae60;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #taxiSearchButton {
+            background-color: #9b59b6; /* Fialová pre Taxi */
+            color: white;
+            width: 48%;
+        }
+
+        #taxiSearchButton:hover {
+            background-color: #8e44ad;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        /* --- KONIEC NOVÝCH ŠTÝLOV --- */
 
         .output-box {
             margin-top: 20px;
@@ -180,27 +207,30 @@
             Hľadať Fotografie v Okolí
         </button>
     </div>
+
+    <h3 style="color: #2c3e50; margin-top: 30px;">🚌 Lokálna Doprava a Taxi</h3>
+    <p style="font-size: 0.9em; color: #7f8c9d;">
+        Rýchle vyhľadávanie cestovných poriadkov MHD alebo lokálnych taxi služieb.
+    </p>
+
+    <div id="local-transport-buttons">
+        <button id="mhdSearchButton" class="ai-action-btn" onclick="startMhdSearch()" disabled>
+            MHD / Cestovné poriadky
+        </button>
+        <button id="taxiSearchButton" class="ai-action-btn" onclick="startTaxiSearch()" disabled>
+            Lokálne Taxi
+        </button>
+    </div>
     </div>
 
 <script>
-// GLOBÁLNE PREMENNÉ PRE ULOŽENIE POLOHY
+// GLOBÁLNE PREMENNÉ PRE ULOŽENIE POLOHY A NÁZVU MESTA
 let lastSpokenText = "";
 let lastCityName = ""; 
 window.currentLat = null; 
 window.currentLon = null; 
 
-// --- FUNKCIE PRE OTVORENIE/ZATVORENIE MENU (vynechané pre stručnosť) ---
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-}
-
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}
-// ---------------------------------------------
-
-
-// --- FUNKCIA PRE HLASOVÝ VÝSTUP (Text-to-Speech) ---
+// --- FUNKCIE PRE HLASOVÝ VÝSTUP (Text-to-Speech) ---
 function speakText(text) {
     if ('speechSynthesis' in window) {
         lastSpokenText = text;
@@ -232,10 +262,16 @@ function updateStatus(message, isError = false) {
 function startLocalization() {
     updateStatus("Prebieha lokalizácia...", false);
     document.getElementById('speakButton').disabled = true;
-    document.getElementById('photoSearchButton').disabled = true; // Zakaž, kým sa nezistí poloha
+    document.getElementById('photoSearchButton').disabled = true; 
+    
+    // ZNEFUNKČNENIE MHD a TAXI tlačidiel na začiatku
+    document.getElementById('mhdSearchButton').disabled = true;
+    document.getElementById('taxiSearchButton').disabled = true;
+
     document.getElementById('outputContent').innerHTML = "... čakám na polohu ...";
     window.currentLat = null;
     window.currentLon = null;
+    lastCityName = "";
 
 
     if (navigator.geolocation) {
@@ -244,11 +280,12 @@ function startLocalization() {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
                 
-                // ⭐ ULOŽENIE SÚRADNÍC A POVOLENIE TLAČIDLA FOTIEK ⭐
+                // ULOŽENIE SÚRADNÍC A POVOLENIE TLAČIDLA FOTIEK
                 window.currentLat = lat; 
                 window.currentLon = lon;
-                document.getElementById('photoSearchButton').disabled = false; // Povolenie tlačidla fotiek
-                // -----------------------------------------------------
+                document.getElementById('photoSearchButton').disabled = false; 
+                document.getElementById('mhdSearchButton').disabled = false; // POVILENIE MHD
+                document.getElementById('taxiSearchButton').disabled = false; // POVILENIE TAXI
 
                 updateStatus(`Poloha zistená. Prebieha zistenie mesta...`);
                 reverseGeocode(lat, lon);
@@ -271,7 +308,6 @@ function startLocalization() {
 
 // --- REVERZNÉ GEOKÓDOVANIE CEZ NOMINATIM (OSM) ---
 async function reverseGeocode(lat, lon) {
-    // Nominatim API: Open-source reverzné geokódovanie
     const NOMINATIM_URL = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&zoom=10&addressdetails=1`;
     
     try {
@@ -294,7 +330,7 @@ async function reverseGeocode(lat, lon) {
     } catch (error) {
         const errorMsg = `Chyba pri Nominatim: Nebolo možné zistiť presný názov mesta.`;
         updateStatus(errorMsg, true);
-        generateAISearchLink("Vaša aktuálna poloha", errorMsg); // Fallback
+        generateAISearchLink("Vaša aktuálna poloha", errorMsg); 
     }
 }
 
@@ -324,33 +360,71 @@ function generateAISearchLink(cityName, error = "") {
     speakText(introText);
 }
 
-// --- NOVÁ, ROZŠÍRENÁ FUNKCIA: VYHĽADÁVANIE OBRÁZKOV PODĽA MESTA ---
+
+// --- FOTOGRAFICKÁ LOGIKA (Google Images podľa Mesta) ---
 function startPhotoSearch() {
-    
-    // 1. KONTROLA
     if (!lastCityName || lastCityName === "neznáme mesto/oblasť") {
-        alert("Najprv kliknite na 'Lokalizovať a Zistiť Mesto' a počkajte, kým AI Asistent zistí názov mesta.");
+        alert("Najprv musíte zistiť názov mesta pomocou 'Lokalizovať a Zistiť Mesto'.");
         return;
     }
 
     const cityName = lastCityName;
-    
-    // 2. GENERÁCIA VYHĽADÁVACIEHO REŤAZCA
-    // Vyhľadávací dotaz bude napr.: "Fotografie zaujímavosti Viedeň"
     const searchTopic = `Fotografie zaujímavosti okolie ${cityName}`; 
     const encodedTopic = encodeURIComponent(searchTopic);
     
-    // 3. ODKAZ NA GOOGLE IMAGES (tbm=isch)
+    // ODKAZ NA GOOGLE IMAGES (tbm=isch)
     const googleImagesURL = `https://www.google.com/search?tbm=isch&q=${encodedTopic}`;
 
-    // 4. OTVORENIE
     window.open(googleImagesURL, '_blank');
     
     updateStatus(`Vyhľadávanie fotografií v okolí spustený v novej záložke.`);
 }
-// ---------------------------------------------
-    
 
+
+// --- NOVÉ FUNKCIE PRE LOKÁLNU DOPRAVU ---
+function startMhdSearch() {
+    if (!lastCityName || lastCityName === "neznáme mesto/oblasť") {
+        alert("Najprv musíte zistiť názov mesta pomocou 'Lokalizovať a Zistiť Mesto'.");
+        return;
+    }
+
+    const cityName = lastCityName;
+    const searchTopic = `MHD cestovné poriadky ${cityName}`; 
+    const encodedTopic = encodeURIComponent(searchTopic);
+    
+    const searchURL = `https://www.google.com/search?q=${encodedTopic}`;
+
+    window.open(searchURL, '_blank');
+    
+    updateStatus(`Vyhľadávanie MHD pre ${cityName} spustený.`);
+}
+
+function startTaxiSearch() {
+    if (!lastCityName || lastCityName === "neznáme mesto/oblasť") {
+        alert("Najprv musíte zistiť názov mesta pomocou 'Lokalizovať a Zistiť Mesto'.");
+        return;
+    }
+
+    const cityName = lastCityName;
+    const searchTopic = `Lokálne taxi služby v ${cityName}`; 
+    const encodedTopic = encodeURIComponent(searchTopic);
+    
+    const searchURL = `https://www.google.com/search?q=${encodedTopic}`;
+
+    window.open(searchURL, '_blank');
+    
+    updateStatus(`Vyhľadávanie Taxi pre ${cityName} spustený.`);
+}
+// -----------------------------------------------------
+
+// --- FUNKCIE PRE OTVORENIE/ZATVORENIE MENU (Pridané len prázdne definície, ak by chýbali) ---
+function openNav() {
+    // Implementácia pre menu
+}
+
+function closeNav() {
+    // Implementácia pre menu
+}
 </script>
 
 </body>
