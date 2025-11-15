@@ -97,6 +97,41 @@
             border-radius: 10px;
             background-color: #ffffff;
         }
+        /* --- ŠTÝLY PRE ODKAZY V PÄTE STRÁNKY (Footer) --- */
+.footer-links {
+    text-align: center; /* Zarovnáva obsah divu (bloky s automatickou šírkou, alebo inline-bloky) */
+    margin-top: 50px; /* Vertikálna medzera od hlavného obsahu */
+    padding-bottom: 20px;
+}
+
+.footer-links a {
+    display: block; /* KĽÚČOVÉ: Prinúti odkaz zaberať celú šírku a ísť na nový riadok */
+    width: 280px; /* Fixná šírka pre pekný vzhľad tlačidla */
+    margin: 10px auto; /* Automatické okraje po stranách vycentrujú blok so šírkou 280px */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s;
+}
+
+/* Špeciálny štýl pre FB odkaz */
+.footer-links a:nth-child(1) {
+    background-color: #4267B2; /* FB modrá */
+    color: white;
+}
+
+/* Špeciálny štýl pre Buy Me a Coffee */
+.footer-links a:nth-child(2) {
+    background-color: #FFDD00; /* BMC žltá */
+    color: #333;
+}
+
+.footer-links a:hover {
+    opacity: 0.9;
+}
+        
     </style>
 </head>
 <body>
@@ -194,10 +229,11 @@
             <strong>Rím</strong> - Aplikácia MyCicero / TicketAppy (mobilný nákup lístkov na MHD).
         </a>
     </div>
-    <div style="text-align: center; margin-top: 30px;">
-   <a href="https://www.facebook.com/groups/812270948345816/"        target="_blank">       ➡️ Naša Facebook skupina    </a>
-        <a href="https://buymeacoffee.com/stefanistok" target="_blank" rel="noopener noreferrer">Zaplatiť kávičku</a>
-</div>
+    <div class="footer-links">
+    <a href="https://www.facebook.com/groups/812270948345816/" target="_blank">➡️ Naša Facebook skupina</a>
+    <a href="https://buymeacoffee.com/stefanistok" target="_blank" rel="noopener noreferrer">Zaplatiť kávičku</a>
+    </div>
+    
 
 </div>
 </body>
