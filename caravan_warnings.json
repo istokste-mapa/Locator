@@ -1,0 +1,144 @@
+{
+  "AT": [
+    {
+      "id": 1,
+      "typ": "Hlavný Zákaz: Nocovanie",
+      "text": "V Rakúsku je vo väčšine spolkových krajín zakázané 'divoké kempovanie' (nocovanie/státie na súkromných a verejných parkoviskách/cestách za účelom prenocovania). Hrozia vysoké pokuty (až do 500 €).",
+      "ikona": "🚫"
+    },
+    {
+      "id": 2,
+      "typ": "Dôležité: Vesty a Lekárnička",
+      "text": "Povinné reflexné vesty pre všetky osoby v karavane (prístupné z kabíny), a súprava prvej pomoci musí byť vo vozidle.",
+      "ikona": "🚨"
+    }
+  ],
+  "DE": [
+    {
+      "id": 1,
+      "typ": "Krátkodobé Státie: Možné",
+      "text": "V Nemecku je povolené 'obnovenie schopnosti riadiť' (jedna noc) na parkoviskách a odpočívadlách, pokiaľ to nie je explicitne zakázané značkou. Kempingové správanie (vyťahovanie stola, markízy) je zakázané.",
+      "ikona": "🅿️"
+    },
+    {
+      "id": 2,
+      "typ": "Dôležité: Ekologické Zóny",
+      "text": "Mnoho nemeckých miest vyžaduje tzv. 'Umweltplakette' (ekologická nálepka) pre vstup do nízkoemisných zón. Kontrola karavanu pred cestou je kľúčová.",
+      "ikona": "🌿"
+    }
+  ],
+  "FR": [
+    {
+      "id": 1,
+      "typ": "Pravidlá: Rôzne pre Oblasti",
+      "text": "Pravidlá sa líšia podľa obce a regiónu. Na súkromných cestách je 'bivakovanie' povolené so súhlasom majiteľa. Sledujte miestne značenie a 'Arrêté Municipal' (obecné vyhlášky).",
+      "ikona": "📜"
+    },
+    {
+      "id": 2,
+      "typ": "Dôležité: Alkohol a Rýchlosť",
+      "text": "Ak hmotnosť presahuje 3,5t, sú obmedzenia na rýchlosť a vyžaduje sa dýchací prístroj vo vozidle (hoci pokuty za jeho absenciu boli zrušené, pre istotu je odporúčaný).",
+      "ikona": "⚠️"
+    }
+  ],
+  "SK": [
+    {
+      "id": 1,
+      "typ": "Zákaz: Mimo Kempy",
+      "text": "Na Slovensku je prísny zákaz 'divokého kempovania' a nocovania karavanov vo voľnej prírode, na parkoviskách a pri vodných plochách (ak to nie je povolené). Vyhýbajte sa chráneným oblastiam.",
+      "ikona": "🚫"
+    }
+  ],
+  "CH": [
+    {
+      "id": 1,
+      "typ": "Hlavný Zákaz: Kantonálne Rozdiely",
+      "text": "Pravidlá sa líšia podľa kantónov. Vo všeobecnosti je divoké kempovanie a nocovanie prísne zakázané. Na súkromných pozemkoch len s povolením. Používajte oficiálne miesta.",
+      "ikona": "🇨🇭"
+    }
+  ],
+  "IT": [
+    {
+      "id": 1,
+      "typ": "Pravidlá: Autogrill a Obce",
+      "text": "Pre nocovanie na diaľničných odpočívadlách (Autogrill) a verejných parkoviskách platia miestne obmedzenia. V historických centrách a turistických oblastiach je zákaz prísny.",
+      "ikona": "⛔"
+    }
+  ]
+
+ 
+  "speedLimits": {
+    "SK": {
+      "<= 3.5t": {
+        "outskirts": 90,
+        "expressway": 130,
+        "highway": 130
+      },
+      "> 3.5t": {
+        "outskirts": 90,
+        "expressway": 90,
+        "highway": 90
+      }
+    },
+    "AT": {
+      "<= 3.5t": {
+        "outskirts": 100,
+        "expressway": 130,
+        "highway": 130
+      },
+      "> 3.5t": {
+        "outskirts": 70,
+        "expressway": 80,
+        "highway": 100
+      }
+    },
+    "DE": {
+      "<= 3.5t": {
+        "outskirts": 100,
+        "expressway": 100,
+        "highway": 130
+      },
+      "> 3.5t": {
+        "outskirts": 80,
+        "expressway": 80,
+        "highway": 100
+      }
+    },
+    "FR": {
+      "<= 3.5t": {
+        "outskirts": 80,
+        "expressway": 110,
+        "highway": 130
+      },
+      "> 3.5t": {
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 110
+      }
+    },
+    "IT": {
+      "<= 3.5t": {
+        "outskirts": 90,
+        "expressway": 110,
+        "highway": 130
+      },
+      "> 3.5t": {
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 100
+      }
+    },
+    "CH": {
+      "<= 3.5t": {
+        "outskirts": 80,
+        "expressway": 120,
+        "highway": 120
+      },
+      "> 3.5t": {
+        "outskirts": 80,
+        "expressway": 100,
+        "highway": 100
+      }
+    }
+  }
+}
