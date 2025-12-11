@@ -143,3 +143,35 @@
   }
 
 }
+,
+"vignetteLinks": {
+    "SK": {
+      "<= 3.5t": "https://eznamka.sk/",
+      "> 3.5t": "https://emyto.sk/sk/home"
+    },
+    "AT": {
+      "<= 3.5t": "https://shop.asfinag.at/sk/",
+      "> 3.5t": "https://go-maut.at/go-maut/sk/"
+    },
+    "DE": {
+      // DE nemá diaľničné známky pre osobné/karavany, ale pre ťažké vozidlá áno
+      "<= 3.5t": "https://www.adac.de/reise-freizeit/maut-vignette/", 
+      "> 3.5t": "https://www.toll-collect.de/sk/kunden/toll-collect-system/system-v-kocke.html"
+    },
+    "CH": {
+      // Švajčiarska diaľničná známka platí rovnako pre obe kategórie (ak karavan neprekročí 3.5t, ale ťažný príves už potrebuje druhú)
+      "<= 3.5t": "https://www.ezv.admin.ch/ezv/sk/home/e-services/autobahnvignette.html",
+      "> 3.5t": "https://www.ezv.admin.ch/ezv/sk/home/e-services/autobahnvignette.html"
+    },
+    "FR": {
+      // Francúzsko má mýto (Toll) a Eco zóny (Crit'Air)
+      "<= 3.5t": "https://www.autoroutes.fr/en/toll.htm",
+      "> 3.5t": "https://www.autoroutes.fr/en/toll.htm"
+    },
+    "IT": {
+      "<= 3.5t": "https://www.autostrade.it/en/home",
+      "> 3.5t": "https://www.autostrade.it/en/home"
+    }
+  }
+}
+
