@@ -124,7 +124,7 @@
     },
     {
       "id": "weight_calculator",
-      "title": "Kalkulátor Zaťaženia a TPZ",
+      "title": "Kalkulačka Zaťaženia a TPZ",
       "icon": "scale",
       "sections": [
         {
@@ -185,7 +185,7 @@
     },
     {
       "id": "satellite_tracker",
-      "title": "Sat AR Tracker",
+      "title": "Satelity (AR)",
       "icon": "satellite_alt",
       "sections": [
         {
@@ -204,7 +204,7 @@
     },
     {
       "id": "sun_path_finder",
-      "title": "Dráha Slnka (AR)",
+      "title": "Slnko (AR)",
       "icon": "wb_sunny",
       "sections": [
         {
@@ -223,7 +223,7 @@
     },
     {
       "id": "pre_departure_checklist",
-      "title": "Kontrolný Zoznam Pred Odchodom",
+      "title": "Pred Odchodom",
       "icon": "checklist",
       "sections": [
         {
@@ -247,7 +247,7 @@
       "sections": [
         {
           "heading": "Aktualizácia obsahu",
-          "content": "Tieto návody sú stiahnuté z internetu, čo nám umožňuje ich okamžite aktualizovať bez nutnosti sťahovania novej verzie aplikácie."
+          "content": "Pokial vam niečo nie je jasné, kontaktujte nás na Facebooku."
         }
       ]
     }
