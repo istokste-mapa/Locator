@@ -24,14 +24,22 @@
     },
     {
       "id": "ar_leveling",
-      "title": "AR Leveling (Vyváženie)",
-      "icon": "straighten",
-      "sections": [
-        {
-          "heading": "Ako funguje AR Leveling",
-          "content": "Táto funkcia používa kameru vášho telefónu a rozšírenú realitu (AR) na vizuálne zobrazenie, aké vysoké podložky potrebujete pod kolesá, aby ste karavan vyrovnali. "
-        }
-      ]
+  "title": "AR Leveling (Vyváženie)",
+  "icon": "straighten",
+  "sections": [
+    {
+      "heading": "AKO FUNGUJE AR LEVELING?",
+      "content": "Táto funkcia používa AKCELEROMETER telefónu na presné zmeranie uhla náklonu (Roll Angle) a premieta rotujúcu čiaru priamo do náhľadu KAMERY (Rozšírená realita - AR). Čiara v zobrazení kamery predstavuje PERFEKTNÚ ROVINU (0°). Vašou úlohou je umiestniť karavan tak, aby sa rovná línia (napr. okno alebo spodná hrana karavanu) zhodovala s rovnou čiarou na displeji. "
+    },
+    {
+      "heading": "KROKY PRE SPRÁVNE MERANIE",
+      "content": "* **Umiestnenie telefónu:** Položte telefón na rovnú, STABILNÚ plochu karavanu – ideálne do stredu, kolmo na smer jazdy (napr. na kuchynskú linku, kde je meranie náklonu najpresnejšie).\n* **Zadajte Šírku:** V menu (ozubené koleso vpravo hore) zadajte presnú ŠÍRKU VÁŠHO KARAVANU (napr. 235 cm). Táto hodnota je KĽÚČOVÁ pre presný výpočet potrebného ZDVIHU.\n* **Mierte na cieľ:** S kamerou mierte na rovný horizontálny prvok karavanu (napr. okno, rímsu), ktorý sa na vašej strane nachádza vo výške zeme, v ktorej plánujete dať podložku. Centrálny kríž slúži ako referenčný bod zamerania."
+    },
+    {
+      "heading": "VÝSLEDKY A POZASTAVENIE MERANIA",
+      "content": "APLIKÁCIA VYPOCITA:\n* **Náklon (°):** Aktuálny uhol.\n* **Potrebný Zdvih (cm):** Koľko centimetrov VYSOKÚ PODLOŽKU musíte umiestniť pod koleso na nižšej strane, aby ste dosiahli rovinu.\n\n**Tlačidlo ZAMERANÉ:** Po dosiahnutí stability stlačte žlté tlačidlo 'ZAMERANÉ'. Meranie (údaje zo senzora) sa PAUZUJE a na displeji zostane fixne zobrazený nameraný výsledok. To je ideálne, ak chcete opustiť karavan a ísť umiestniť podložky bez toho, aby sa výsledok menil."
+    }
+  ]
     },
     {
       "id": "travel_log",
