@@ -5,141 +5,141 @@
   "modules": [
     {
       "id": "intro_warnings",
-  "title": "Úvod a dopravné info",
-  "icon": "traffic",
-  "sections": [
-    {
-      "heading": "AKO FUNGUJE ZISTENIE POLOHY",
-      "content": "Táto obrazovka automaticky načíta OBMEZENIA a RYCHLOSTNÉ LIMITY pre krajinu, v ktorej sa práve nachádzate, pomocou GPS. Načítavajú sa dáta z externého dátového zdroja (JSON). DÁTA SÚ VŽDY LEN INFORMATÍVNE a pred jazdou je NUTNÉ overiť si lokálne predpisy. \n\nAk sa nepodarí zistiť polohu (napríklad ZLYHANIE GPS), zobrazí sa vám manuálny výber krajiny na vrchole obrazovky."
-    },
-    {
-      "heading": "PREPÍNAČ HMOTNOSTI (≤ 3.5t / > 3.5t)",
-      "content": "Pre správne zobrazenie RÝCHLOSTNÝCH LIMTOV a odkazov na MÝTO/ZNÁMKY je kľúčové nastaviť správnu hmotnostnú kategóriu vášho karavanu. Prepínače sa nachádzajú v strede obrazovky pod názvom krajiny. Zmena kategórie AUTOMATICKY mení zobrazené limity a odkaz na e-známku. \n\nAk máte PRÍVES, vždy používajte kategóriu s celkovou SÚPRAVOU hmotnosťou (motorové vozidlo + príves)."
-    },
-    {
-      "heading": "RYCHLOSŤ, ZNÁMKY A UPOZORNENIA",
-      "content": "RÝCHLOSTNÉ LIMITY: Zobrazená tabuľka ukazuje limity pre kategóriu, ktorú ste vybrali (Mimo obce, Rýchlostná cesta, Diaľnica).\n\nE-ZNÁMKY A MÝTO: V sekcii E-ZNÁMKY sa nachádza manuálny ROZKLIKÁVACÍ ZOZNAM s krajinami, pre ktoré máme oficiálne odkazy na nákup diaľničných známok. Prekliknutie na stránku sa realizuje cez tlačidlo OTVORIŤ ODKAZ.\n\nVAROVANIA: V spodnej časti sú zobrazené dôležité INFORMÁCIE alebo ZÁKAZY špecifické pre danú krajinu (napr. zákaz spania na parkoviskách, špeciálne pravidlá pre plyn)."
-    }
-  ]
+      "title": "Úvod a dopravné info",
+      "icon": "traffic",
+      "sections": [
+        {
+          "heading": "AKO FUNGUJE ZISTENIE POLOHY",
+          "content": "Táto obrazovka automaticky načíta OBMEZENIA a RYCHLOSTNÉ LIMITY pre krajinu, v ktorej sa práve nachádzate, pomocou GPS. Načítavajú sa dáta z externého dátového zdroja (JSON). DÁTA SÚ VŽDY LEN INFORMATÍVNE a pred jazdou je NUTNÉ overiť si lokálne predpisy. \n\nAk sa nepodarí zistiť polohu (napríklad ZLYHANIE GPS), zobrazí sa vám manuálny výber krajiny na vrchole obrazovky."
+        },
+        {
+          "heading": "PREPÍNAČ HMOTNOSTI (≤ 3.5t / > 3.5t)",
+          "content": "Pre správne zobrazenie RÝCHLOSTNÝCH LIMTOV a odkazov na MÝTO/ZNÁMKY je kľúčové nastaviť správnu hmotnostnú kategóriu vášho karavanu. Prepínače sa nachádzajú v strede obrazovky pod názvom krajiny. Zmena kategórie AUTOMATICKY mení zobrazené limity a odkaz na e-známku. \n\nAk máte PRÍVES, vždy používajte kategóriu s celkovou SÚPRAVOU hmotnosťou (motorové vozidlo + príves)."
+        },
+        {
+          "heading": "RYCHLOSŤ, ZNÁMKY A UPOZORNENIA",
+          "content": "RÝCHLOSTNÉ LIMITY: Zobrazená tabuľka ukazuje limity pre kategóriu, ktorú ste vybrali (Mimo obce, Rýchlostná cesta, Diaľnica).\n\nE-ZNÁMKY A MÝTO: V sekcii E-ZNÁMKY sa nachádza manuálny ROZKLIKÁVACÍ ZOZNAM s krajinami, pre ktoré máme oficiálne odkazy na nákup diaľničných známok. Prekliknutie na stránku sa realizuje cez tlačidlo OTVORIŤ ODKAZ.\n\nVAROVANIA: V spodnej časti sú zobrazené dôležité INFORMÁCIE alebo ZÁKAZY špecifické pre danú krajinu (napr. zákaz spania na parkoviskách, špeciálne pravidlá pre plyn)."
+        }
+      ]
     },
     {
       "id": "ar_leveling",
-  "title": "AR Leveling (Vyváženie)",
-  "icon": "straighten",
-  "sections": [
-    {
-      "heading": "AKO FUNGUJE AR LEVELING?",
-      "content": "Táto funkcia používa AKCELEROMETER telefónu na presné zmeranie uhla náklonu (Roll Angle) a premieta rotujúcu čiaru priamo do náhľadu KAMERY (Rozšírená realita - AR). Čiara v zobrazení kamery predstavuje PERFEKTNÚ ROVINU (0°). Vašou úlohou je umiestniť karavan tak, aby sa rovná línia (napr. okno alebo spodná hrana karavanu) zhodovala s rovnou čiarou na displeji. "
-    },
-    {
-      "heading": "KROKY PRE SPRÁVNE MERANIE",
-      "content": "* **Umiestnenie telefónu:** Položte telefón na rovnú, STABILNÚ plochu karavanu – ideálne do stredu, kolmo na smer jazdy (napr. na kuchynskú linku, kde je meranie náklonu najpresnejšie).\n* **Zadajte Šírku:** V menu (ozubené koleso vpravo hore) zadajte presnú ŠÍRKU VÁŠHO KARAVANU (napr. 235 cm). Táto hodnota je KĽÚČOVÁ pre presný výpočet potrebného ZDVIHU.\n* **Mierte na cieľ:** S kamerou mierte na rovný horizontálny prvok karavanu (napr. okno, rímsu), ktorý sa na vašej strane nachádza vo výške zeme, v ktorej plánujete dať podložku. Centrálny kríž slúži ako referenčný bod zamerania."
-    },
-    {
-      "heading": "VÝSLEDKY A POZASTAVENIE MERANIA",
-      "content": "APLIKÁCIA VYPOCITA:\n* **Náklon (°):** Aktuálny uhol.\n* **Potrebný Zdvih (cm):** Koľko centimetrov VYSOKÚ PODLOŽKU musíte umiestniť pod koleso na nižšej strane, aby ste dosiahli rovinu.\n\n**Tlačidlo ZAMERANÉ:** Po dosiahnutí stability stlačte žlté tlačidlo 'ZAMERANÉ'. Meranie (údaje zo senzora) sa PAUZUJE a na displeji zostane fixne zobrazený nameraný výsledok. To je ideálne, ak chcete opustiť karavan a ísť umiestniť podložky bez toho, aby sa výsledok menil."
-    }
-  ]
+      "title": "AR Leveling (Vyváženie)",
+      "icon": "straighten",
+      "sections": [
+        {
+          "heading": "AKO FUNGUJE AR LEVELING?",
+          "content": "Táto funkcia používa AKCELEROMETER telefónu na presné zmeranie uhla náklonu (Roll Angle) a premieta rotujúcu čiaru priamo do náhľadu KAMERY (ROZŠÍRENÁ REALITA - AR). Čiara v zobrazení kamery predstavuje PERFEKTNÚ ROVINU (0°). Vašou úlohou je umiestniť karavan tak, aby sa rovná línia (napr. okno alebo spodná hrana karavanu) zhodovala s rovnou čiarou na displeji. "
+        },
+        {
+          "heading": "KROKY PRE SPRÁVNE MERANIE",
+          "content": "* UMIESTNENIE TELEFÓNU: Položte telefón na rovnú, STABILNÚ plochu karavanu – ideálne do stredu, kolmo na smer jazdy (napr. na kuchynskú linku, kde je meranie náklonu najpresnejšie).\n* ZADAJTE ŠÍRKU: V menu (ozubené koleso vpravo hore) zadajte presnú ŠÍRKU VÁŠHO KARAVANU (napr. 235 cm). Táto hodnota je KĽÚČOVÁ pre presný výpočet potrebného ZDVIHU.\n* Mierte na cieľ: S kamerou mierte na rovný horizontálny prvok karavanu (napr. okno, rímsu), ktorý sa na vašej strane nachádza vo výške zeme, v ktorej plánujete dať podložku. Centrálny kríž slúži ako referenčný bod zamerania."
+        },
+        {
+          "heading": "VÝSLEDKY A POZASTAVENIE MERANIA",
+          "content": "APLIKÁCIA VYPOCITA:\n* NÁKLON (°): Aktuálny uhol.\n* POTREBNÝ ZDVIH (cm): Koľko centimetrov VYSOKÚ PODLOŽKU musíte umiestniť pod koleso na nižšej strane, aby ste dosiahli rovinu.\n\nTLAČIDLO ZAMERANÉ: Po dosiahnutí stability stlačte žlté tlačidlo 'ZAMERANÉ'. Meranie (údaje zo senzora) sa PAUZUJE a na displeji zostane fixne zobrazený nameraný výsledok. To je ideálne, ak chcete opustiť karavan a ísť umiestniť podložky bez toho, aby sa výsledok menil."
+        }
+      ]
     },
     {
       "id": "travel_log",
-  "title": "Cestovný denník",
-  "icon": "map",
-  "sections": [
-    {
-      "heading": "AKO POUŽÍVAŤ CESTOVNÝ DENNÍK",
-      "content": "Cestovný denník slúži na uchovávanie spomienok na miesta, ktoré ste navštívili, a na zaznamenanie presnej GPS polohy vášho parkovacieho miesta. Je rozdelený na dve záložky (tlačidlá v spodnej lište): 'Nový záznam' a 'Zoznam záznamov'."
-    },
-    {
-      "heading": "ZÁLOŽKA 1: NOVÝ ZÁZNAM / EDITÁCIA",
-      "content": "Táto záložka slúži na vytvorenie nového záznamu alebo na úpravu existujúceho. \n\n* **Získanie Polohy:** Pred uložením nového záznamu je NEVYHNUTNÉ stlačiť tlačidlo **'Získať polohu'**. Aplikácia získa aktuálne GPS súradnice a dátum/čas, ktoré budú uložené spolu so záznamom.\n* **Popis:** Pridajte svoj zážitok, poznámky o mieste alebo servisné informácie (napr. 'Tiché parkovisko pri jazere', 'Chyba v elektrine').\n* **Fotky:** Môžete pridať až dve fotky z galérie. Tieto sú priamo uložené v internej pamäti aplikácie a pri zdieľaní sa prenášajú spolu s textom.\n* **Editácia:** Ak začnete upravovať starý záznam, môžete zmeniť popis a fotky. Ak v režime editácie stlačíte **'Získať polohu'**, pôvodné GPS súradnice sa prepíšu novými."
-    },
-    {
-      "heading": "ZÁLOŽKA 2: ZOZNAM ZÁZNAMOV",
-      "content": "Tu nájdete všetky doteraz uložené zastávky. Záznamy sú usporiadané chronologicky.\n\n* **Zdieľať Celý Výlet:** Tlačidlo na vrchu zoznamu vygeneruje SÚHRN všetkých zastávok s dátumom začiatku a konca cesty. Vytvorí tiež odkaz (Google Content URL) na predbežnú mapu trasy  a priloží všetky fotky, ktoré boli v záznamoch uložené, pripravené na zdieľanie napr. na sociálnych sieťach.\n* **Akcie (Tri bodky):** Pri každom zázname máte možnosť Upraviť (vráti vás na záložku 'Nový záznam') alebo Zmazať záznam.\n* **Zdieľať Jednotlivý Záznam:** Ikona zdieľania (štvorec so šípkou) umožní zdieľať iba text a fotky jedného konkrétneho miesta."
-    },
-    {
-      "heading": "DÔLEŽITÉ: SPRÁVA DÁT",
-      "content": "Tlačidlo **'ZMAZAŤ VŠETKY ZÁZNAMY'** na záložke 'Nový záznam' slúži na archiváciu ukončeného výletu a prípravu denníka na nový. Zmaže VŠETKY záznamy a ich lokálne uložené fotky. Táto akcia je nevratná."
-    }
-  ]
+      "title": "Cestovný denník",
+      "icon": "map",
+      "sections": [
+        {
+          "heading": "AKO POUŽÍVAŤ CESTOVNÝ DENNÍK",
+          "content": "Cestovný denník slúži na uchovávanie spomienok na miesta, ktoré ste navštívili, a na zaznamenanie presnej GPS polohy vášho parkovacieho miesta. Je rozdelený na dve záložky (tlačidlá v spodnej lište): 'Nový záznam' a 'Zoznam záznamov'."
+        },
+        {
+          "heading": "ZÁLOŽKA 1: NOVÝ ZÁZNAM / EDITÁCIA",
+          "content": "Táto záložka slúži na vytvorenie nového záznamu alebo na úpravu existujúceho. \n\n* **Získanie Polohy:** Pred uložením nového záznamu je NEVYHNUTNÉ stlačiť tlačidlo 'ZÍSKAŤ POLOHU'. Aplikácia získa aktuálne GPS súradnice a dátum/čas, ktoré budú uložené spolu so záznamom.\n* **Popis:** Pridajte svoj zážitok, poznámky o mieste alebo servisné informácie (napr. 'Tiché parkovisko pri jazere', 'Chyba v elektrine').\n* **Fotky:** Môžete pridať až dve fotky z galérie. Tieto sú priamo uložené v internej pamäti aplikácie a pri zdieľaní sa prenášajú spolu s textom.\n* EDITÁCIA: Ak začnete upravovať starý záznam, môžete zmeniť popis a fotky. Ak v režime editácie stlačíte 'ZÍSKAŤ POLOHU', pôvodné GPS súradnice sa prepíšu novými."
+        },
+        {
+          "heading": "ZÁLOŽKA 2: ZOZNAM ZÁZNAMOV",
+          "content": "Tu nájdete všetky doteraz uložené zastávky. Záznamy sú usporiadané chronologicky.\n\n* ZDIEĽAŤ CELÝ VÝLET: Tlačidlo na vrchu zoznamu vygeneruje SÚHRN všetkých zastávok s dátumom začiatku a konca cesty. Vytvorí tiež odkaz (Google Content URL) na predbežnú mapu trasy  a priloží všetky fotky, ktoré boli v záznamoch uložené, pripravené na zdieľanie napr. na sociálnych sieťach.\n* AKCIE (TRI BODKY): Pri každom zázname máte možnosť Upraviť (vráti vás na záložku 'Nový záznam') alebo Zmazať záznam.\n* ZDIEĽAŤ JEDNOTLIVÝ ZÁZNAM: Ikona zdieľania (štvorec so šípkou) umožní zdieľať iba text a fotky jedného konkrétneho miesta."
+        },
+        {
+          "heading": "DÔLEŽITÉ: SPRÁVA DÁT",
+          "content": "Tlačidlo 'ZMAZAŤ VŠETKY ZÁZNAMY' na záložke 'Nový záznam' slúži na archiváciu ukončeného výletu a prípravu denníka na nový. Zmaže VŠETKY záznamy a ich lokálne uložené fotky. Táto akcia je nevratná."
+        }
+      ]
     },
     {
       "id": "ar_space_planning",
-  "title": "AR Plánovanie priestoru",
-  "icon": "crop_rotate",
-  "sections": [
-    {
-      "heading": "O FUNKCII AR PLÁNOVANIE PRIESTORU",
-      "content": "Táto experimentálna funkcia premieňa váš telefón na jednoduchý nástroj pre vizualizáciu priestoru pomocou **Augmented Reality (Rozšírenej Reality)**. Umožňuje premietnuť virtuálny 3D kváder (box) definovaných rozmerov (Šírka, Dĺžka, Výška) do náhľadu z vašej kamery."
-    },
-    {
-      "heading": "KĽÚČOVÉ VYUŽITIE",
-      "content": "* **Vizualizácia nového nábytku:** Zistite, či sa vaša nová chladnička, skriňa alebo lôžko zmestí do karavanu.\n* **Overenie voľného miesta:** Vizualizujte si, koľko voľného priestoru zostane po inštalácii nového zariadenia.\n* **Dizajnové nápady:** Pomáha pri plánovaní pre usporiadanie interiéru karavanu alebo pri overení vonkajších úložných priestorov."
-    },
-    {
-      "heading": "KALIBRÁCIA A NASTAVENIE (KĽÚČOVÝ KROK)",
-      "content": "Pre realistické zobrazenie je nevyhnutné správne nastavenie dvoch sád hodnôt. \n\n1. **Šírka (W), Dĺžka (L), Výška (H):** Zadajte presné rozmery (v cm) priestoru/objektu, ktorý chcete vizualizovať (napr. 350 W, 700 L, 300 H).\n2. **Vzdialenosť k miestu (D):** Toto je najdôležitejšia premenná pre mierku. **Zmerajte vzdialenosť (v cm) od objektívu vášho telefónu k bodu na stene/podlahe, kde má začať virtuálny 3D kváder.** Táto hodnota sa používa pre projekčný výpočet 3D boxu. Ak je 'D' príliš nízka, box bude vyzerať obrovský a naopak."
-    },
-    {
-      "heading": "AKO FUNGUJE AR EFEKT",
-      "content": "* **Kamera:** Aplikácia používa zadnú kameru. Na dosiahnutie plynulého prekrytia je nutné udeliť povolenie na prístup ku kamere.\n* **Senzory (Akcelerometer):** Pri pohybe telefónu modul monitoruje **Uhol náklonu** ('Roll' a 'Pitch') zariadenia. Tieto údaje sa používajú na dynamické posúvanie (rotáciu) virtuálneho 3D boxu na obrazovke tak, aby sa udržala ilúzia fixnej polohy v priestore, bez ohľadu na mierne nakláňanie telefónu."
-    },
-    {
-      "heading": "RIEŠENIE PROBLÉMOV",
-      "content": "* **Čierna obrazovka/Chyba:** Stlačte tlačidlo **'Znova načítať kameru'** (ikona obnovenia vpravo hore). Skontrolujte povolenia kamery v nastaveniach telefónu.\n* **AR box sa neobjavil/je zle umiestnený:** Skontrolujte, či sú všetky hodnoty (W, L, H, D) zadané v centimetroch a sú väčšie ako 1. Pre dosiahnutie optimálnych výsledkov držte telefón v stabilnej polohe a namierte ho na miesto, kde ste merali 'Vzdialenosť k miestu (D)'."
-    }
-  ]
+      "title": "AR Plánovanie priestoru",
+      "icon": "crop_rotate",
+      "sections": [
+        {
+          "heading": "O FUNKCII AR PLÁNOVANIE PRIESTORU",
+          "content": "Táto experimentálna funkcia premieňa váš telefón na jednoduchý nástroj pre vizualizáciu priestoru pomocou AUGMENTED REALITY (ROZŠÍRENEJ REALITY). Umožňuje premietnuť virtuálny 3D kváder (box) definovaných rozmerov (Šírka, Dĺžka, Výška) do náhľadu z vašej kamery."
+        },
+        {
+          "heading": "KĽÚČOVÉ VYUŽITIE",
+          "content": "* Vizualizácia nového nábytku: Zistite, či sa vaša nová chladnička, skriňa alebo lôžko zmestí do karavanu.\n* Overenie voľného miesta: Vizualizujte si, koľko voľného priestoru zostane po inštalácii nového zariadenia.\n* Dizajnové nápady: Pomáha pri plánovaní pre usporiadanie interiéru karavanu alebo pri overení vonkajších úložných priestorov."
+        },
+        {
+          "heading": "KALIBRÁCIA A NASTAVENIE (KĽÚČOVÝ KROK)",
+          "content": "Pre realistické zobrazenie je nevyhnutné správne nastavenie dvoch sád hodnôt. \n\n1. ŠÍRKA (W), DĹŽKA (L), VÝŠKA (H): Zadajte presné rozmery (v cm) priestoru/objektu, ktorý chcete vizualizovať (napr. 350 W, 700 L, 300 H).\n2. VZDIALENOSŤ K MIESTU (D): Toto je najdôležitejšia premenná pre mierku. ZMERAJTE VZDIALENOSŤ (V CM) OD OBJEKTÍVU VÁŠHO TELEFÓNU K BODU NA STENE/PODLAHE, KDE MÁ ZAČAŤ VIRTUÁLNY 3D KVÁDER. Táto hodnota sa používa pre projekčný výpočet 3D boxu. Ak je 'D' príliš nízka, box bude vyzerať obrovský a naopak."
+        },
+        {
+          "heading": "AKO FUNGUJE AR EFEKT",
+          "content": "* Kamera: Aplikácia používa zadnú kameru. Na dosiahnutie plynulého prekrytia je nutné udeliť povolenie na prístup ku kamere.\n* Senzory (Akcelerometer): Pri pohybe telefónu modul monitoruje ÚHOL NÁKLONU ('Roll' a 'Pitch') zariadenia. Tieto údaje sa používajú na dynamické posúvanie (rotáciu) virtuálneho 3D boxu na obrazovke tak, aby sa udržala ilúzia fixnej polohy v priestore, bez ohľadu na mierne nakláňanie telefónu."
+        },
+        {
+          "heading": "RIEŠENIE PROBLÉMOV",
+          "content": "* Čierna obrazovka/Chyba: Stlačte tlačidlo 'ZNOVA NAČÍTAŤ KAMERU' (ikona obnovenia vpravo hore). Skontrolujte povolenia kamery v nastaveniach telefónu.\n* AR box sa neobjavil/je zle umiestnený: Skontrolujte, či sú všetky hodnoty (W, L, H, D) zadané v centimetroch a sú väčšie ako 1. Pre dosiahnutie optimálnych výsledkov držte telefón v stabilnej polohe a namierte ho na miesto, kde ste merali VZDIALENOSŤ K MIESTU (D)."
+        }
+      ]
     },
     {
       "id": "gps_locator",
-  "title": "GPS Lokátor a Parkovisko",
-  "icon": "gps_fixed",
-  "sections": [
-    {
-      "heading": "O FUNKCII GPS LOKÁTOR",
-      "content": "Táto funkcia slúži ako osobný navigačný asistent, ktorý vám pomôže vrátiť sa k zaparkovanému karavanu po pešej túre, prechádzke mestom alebo výlete. Umožňuje uložiť presnú GPS polohu karavanu a následne vás k nej naviguje pomocou vzdialenosti a vizuálneho kompasu."
-    },
-    {
-      "heading": "AKO POUŽÍVAŤ",
-      "content": "* **Zaparkujte:** Zapnite túto obrazovku a uistite sa, že ste získali svoju aktuálnu polohu (zelená ikona). Ak je poloha presná (nízka hodnota 'Presnosť'), stlačte **'Uložiť Aktuálnu'**.\n* **Uloženie:** Zadajte názov (napr. Kemp Stará Voda, Parkovisko pod lesom). Táto poloha sa uloží do pamäte telefónu (nie do cloudu).\n* **Návrat:** Počas pešej túry aplikácia neustále sleduje vašu polohu a v reálnom čase aktualizuje **vzdialenosť** a **smer** k uloženému karavanu. Orientujte sa pomocou strelky kompasu."
-    },
-    {
-      "heading": "KOMPAS A NAVIGÁCIA ",
-      "content": "Sekcia Navigácia zobrazuje dve kľúčové informácie:\n\n1. **Vzdialenosť:** Presná vzdialenosť (v metroch alebo kilometroch) k uloženému cieľu.\n2. **Strelka (Kompas):** Dynamická strelka, ktorá ukazuje priamo k uloženému miestu. Je kalibrovaná podľa smeru, kam je namierený váš telefón (`heading`), a smeru k cieľu (`bearing`). **Ak sa strelka nachádza hore (orientovaná ako 'North'), kráčate správnym smerom k cieľu.**"
-    },
-    {
-      "heading": "KĽÚČOVÉ GPS DÁTA",
-      "content": "* **Aktuálna Poloha:** Získavaná v reálnom čase pomocou GPS streamu. Dôležitý údaj je **Presnosť** (v metroch), ktorá by mala byť pre uloženie čo najnižšia (ideálne pod 10 m).\n* **Uložené Miesto:** Súradnice (Latitude a Longitude) miesta, ktoré ste označili ako 'Parkovisko'."
-    },
-    {
-      "heading": "RIEŠENIE PROBLÉMOV",
-      "content": "* **Poloha nie je dostupná:** Uistite sa, že máte v telefóne povolené **Služby polohy (GPS)** a v nastaveniach aplikácie sú udelené **Oprávnenia na polohu**.\n* **Kompas sa neotáča:** Váš telefón nemusí mať zabudovaný magnetický senzor (kompas), alebo je potrebné reštartovať aplikáciu. Ak to nepomôže, navigujte sa iba podľa číselnej hodnoty vzdialenosti."
-    }
-  ]
+      "title": "GPS Lokátor a Parkovisko",
+      "icon": "gps_fixed",
+      "sections": [
+        {
+          "heading": "O FUNKCII GPS LOKÁTOR",
+          "content": "Táto funkcia slúži ako osobný navigačný asistent, ktorý vám pomôže vrátiť sa k zaparkovanému karavanu po pešej túre, prechádzke mestom alebo výlete. Umožňuje uložiť presnú GPS polohu karavanu a následne vás k nej naviguje pomocou vzdialenosti a vizuálneho kompasu."
+        },
+        {
+          "heading": "AKO POUŽÍVAŤ",
+          "content": "* Zaparkujte: Zapnite túto obrazovku a uistite sa, že ste získali svoju aktuálnu polohu (zelená ikona). Ak je poloha presná (nízka hodnota 'Presnosť'), stlačte 'ULOŽIŤ AKTUÁLNU'.\n* Uloženie: Zadajte názov (napr. Kemp Stará Voda, Parkovisko pod lesom). Táto poloha sa uloží do pamäte telefónu (nie do cloudu).\n* Návrat: Počas pešej túry aplikácia neustále sleduje vašu polohu a v reálnom čase aktualizuje VZDIALENOSŤ a SMER k uloženému karavanu. Orientujte sa pomocou strelky kompasu."
+        },
+        {
+          "heading": "KOMPAS A NAVIGÁCIA ",
+          "content": "Sekcia Navigácia zobrazuje dve kľúčové informácie:\n\n1. VZDIALENOSŤ: Presná vzdialenosť (v metroch alebo kilometroch) k uloženému cieľu.\n2. STRELKA (KOMPAS): Dynamická strelka, ktorá ukazuje priamo k uloženému miestu. Je kalibrovaná podľa smeru, kam je namierený váš telefón (HEADING), a smeru k cieľu (BEARING). AK SA STRELKA NACHÁDZA HORE (ORIENTOVANÁ AKO 'NORTH'), KRÁČATE SPRÁVNYM SMEROM K CIEĽU."
+        },
+        {
+          "heading": "KĽÚČOVÉ GPS DÁTA",
+          "content": "* Aktuálna Poloha: Získavaná v reálnom čase pomocou GPS streamu. Dôležitý údaj je PRESNOSŤ (v metroch), ktorá by mala byť pre uloženie čo najnižšia (ideálne pod 10 m).\n* Uložené Miesto: Súradnice (Latitude a Longitude) miesta, ktoré ste označili ako 'Parkovisko'."
+        },
+        {
+          "heading": "RIEŠENIE PROBLÉMOV",
+          "content": "* Poloha nie je dostupná: Uistite sa, že máte v telefóne povolené SLUŽBY POLOHY (GPS) a v nastaveniach aplikácie sú udelené OPRÁVNENIA NA POLOHU.\n* Kompas sa neotáča: Váš telefón nemusí mať zabudovaný magnetický senzor (kompas), alebo je potrebné reštartovať aplikáciu. Ak to nepomôže, navigujte sa iba podľa číselnej hodnoty vzdialenosti."
+        }
+      ]
     },
     {
       "id": "weight_calculator",
-  "title": "Kalkulátor Zaťaženia a TPZ",
-  "icon": "scale",
-  "sections": [
-    {
-      "heading": "O FUNKCII",
-      "content": "Táto funkcia slúži na simuláciu rozloženia nákladu v karavane a výpočet vplyvu tohto nákladu na:\n\n1. **Celkovú hmotnosť** súpravy (či neprekročíte MTPL).\n2. **Zaťaženie ťažnej tyče (TPZ)**, čo je kľúčové pre stabilitu a bezpečnosť jazdy. "
-    },
-    {
-      "heading": "ZÁKLADNÉ PARAMETRE",
-      "content": "Pred začatím výpočtov zadajte kľúčové údaje z vášho osvedčenia a manuálu:\n\n* **Pohotovostná hmotnosť:** Hmotnosť prázdneho karavanu s prevádzkovými náplňami (voda, plyn).\n* **Max. povolená (MTPL):** Maximálna technicky prípustná hmotnosť (nezáťažujte karavan nad túto hranicu).\n* **Max. povolený TPZ:** Maximálna povolená vertikálna záťaž na ťažnú guľu.\n* **TPZ bez nákladu:** Statická TPZ meraná, keď je karavan prázdny (iba s pohotovostnou hmotnosťou).\n* **Vzdialenosť nápravy od gule:** Vzdialenosť v metroch od stredu ťažnej gule (0 m) po stred nápravy."
-    },
-    {
-      "heading": "AKO SPRÁVNE ZADAŤ NÁKLAD",
-      "content": "Pridajte každú položku nákladu (batožinu, vodu, bicykle) s jej hmotnosťou a pozíciou:\n\n* **Hmotnosť (kg):** Skutočná hmotnosť predmetu.\n* **Pozícia od ťažnej gule (m):** Vzdialenosť v metroch od stredu ťažnej gule (ktorá je vždy **0 m**) po stred položky nákladu.\n\n### Pravidlo TPZ a Stability\n* **Náklad PRED nápravou (pozícia < vzdialenosť nápravy):** Zvyšuje TPZ (tlak na guľu), čo je pre stabilitu väčšinou prospešné.\n* **Náklad ZA nápravou (pozícia > vzdialenosť nápravy):** Znižuje TPZ (odľahčuje guľu), čo je nebezpečné a môže viesť k **rozhojdaniu (snaking)**. Náklad za nápravou by mal byť čo najľahší."
-    },
-    {
-      "heading": "BEZPEČNÉ ROZPÄTIE TPZ",
-      "content": "Pre optimálnu a bezpečnú jazdu je kľúčové udržiavať TPZ v bezpečnom rozsahu:\n\n* **Príliš vysoké TPZ:** Preťažuje závesné zariadenie vozidla a môže spôsobiť nestabilitu auta.\n* **Príliš nízke TPZ:** Môže spôsobiť nebezpečné rozhojdanie karavanu pri vyšších rýchlostiach.\n\nIdeálne sa odporúča držať TPZ medzi **7%** (minimálna bezpečná hranica) a **100%** (maximálna povolená hranica) maximálneho povoleného zaťaženia."
-    }
-  ]
+      "title": "Kalkulátor Zaťaženia a TPZ",
+      "icon": "scale",
+      "sections": [
+        {
+          "heading": "O FUNKCII",
+          "content": "Táto funkcia slúži na simuláciu rozloženia nákladu v karavane a výpočet vplyvu tohto nákladu na:\n\n1. CELKOVÚ HMOTNOSŤ súpravy (či neprekročíte MTPL).\n2. ZAŤAŽENIE ŤAŽNEJ TYČE (TPZ), čo je kľúčové pre stabilitu a bezpečnosť jazdy. "
+        },
+        {
+          "heading": "ZÁKLADNÉ PARAMETRE",
+          "content": "Pred začatím výpočtov zadajte kľúčové údaje z vášho osvedčenia a manuálu:\n\n* Pohotovostná hmotnosť: Hmotnosť prázdneho karavanu s prevádzkovými náplňami (voda, plyn).\n* MAX. POVOLENÁ (MTPL): Maximálna technicky prípustná hmotnosť (nezáťažujte karavan nad túto hranicu).\n* MAX. POVOLENÝ TPZ: Maximálna povolená vertikálna záťaž na ťažnú guľu.\n* TPZ BEZ NÁKLADU: Statická TPZ meraná, keď je karavan prázdny (iba s pohotovostnou hmotnosťou).\n* VZDIALENOSŤ NÁPRAVY OD GULE: Vzdialenosť v metroch od stredu ťažnej gule (0 M) po stred nápravy."
+        },
+        {
+          "heading": "AKO SPRÁVNE ZADAŤ NÁKLAD",
+          "content": "Pridajte každú položku nákladu (batožinu, vodu, bicykle) s jej hmotnosťou a pozíciou:\n\n* Hmotnosť (kg): Skutočná hmotnosť predmetu.\n* Pozícia od ťažnej gule (m): Vzdialenosť v metroch od stredu ťažnej gule (ktorá je vždy 0 M) po stred položky nákladu.\n\n### Pravidlo TPZ a Stability\n* NÁKLAD PRED NÁPRAVOU (POZÍCIA < VZDIALENOSŤ NÁPRAVY): Zvyšuje TPZ (tlak na guľu), čo je pre stabilitu väčšinou prospešné.\n* NÁKLAD ZA NÁPRAVOU (POZÍCIA > VZDIALENOSŤ NÁPRAVY): Znižuje TPZ (odľahčuje guľu), čo je nebezpečné a môže viesť k ROZHOJDANIU (SNAKING). Náklad za nápravou by mal byť čo najľahší."
+        },
+        {
+          "heading": "BEZPEČNÉ ROZPÄTIE TPZ",
+          "content": "Pre optimálnu a bezpečnú jazdu je kľúčové udržiavať TPZ v bezpečnom rozsahu:\n\n* PRÍLIŠ VYSOKÉ TPZ: Preťažuje závesné zariadenie vozidla a môže spôsobiť nestabilitu auta.\n* PRÍLIŠ NÍZKE TPZ: Môže spôsobiť nebezpečné rozhojdanie karavanu pri vyšších rýchlostiach.\n\nIdeálne sa odporúča držať TPZ medzi 7% (minimálna bezpečná hranica) a 100% (maximálna povolená hranica) maximálneho povoleného zaťaženia."
+        }
+      ]
     },
     {
       "id": "off_grid_calculator",
@@ -147,24 +147,24 @@
       "icon": "flash_on",
       "sections": [
         {
-          "heading": "⚡ Úvod a účel kalkulačky",
+          "heading": "⚡ ÚVOD A ÚČEL KALKULAČKY",
           "content": "Kalkulačka vám pomôže odhadnúť, ako dlho vydrží váš karavan fungovať nezávisle na základe batérií, soláru, vody a plynu. Odhad je len informatívny, vychádza z priemerných hodnôt spotreby. Pre presnosť je kľúčové zadať reálny čas používania spotrebičov."
         },
         {
-          "heading": "🔋 Energetický systém",
-          "content": "Zadajte kapacitu batérie v Ampérhodinách (Ah) a celkový výkon Soláru (Wp). \n\n**Typ batérie:** Aktivujte 'Lítiová batéria', ak máte LiFePO4. Pre olovené/gélové batérie je využiteľná kapacita len cca 50%. \n\n**Počasie:** Zvoľte očakávané počasie. To výrazne ovplyvňuje zisk zo solárnych panelov (Jasno = 100% zisk, Zamračené = cca 10-15% zisk)."
+          "heading": "🔋 ENERGETICKÝ SYSTÉM",
+          "content": "Zadajte kapacitu batérie v Ampérhodinách (Ah) a celkový výkon Soláru (Wp). \n\nTYP BATÉRIE: Aktivujte 'Lítiová batéria', ak máte LiFePO4. Pre olovené/gélové batérie je využiteľná kapacita len cca 50%. \n\nPOČASIE: Zvoľte očakávané počasie. To výrazne ovplyvňuje zisk zo solárnych panelov (Jasno = 100% zisk, Zamračené = cca 10-15% zisk)."
         },
         {
-          "heading": "🔌 Spotrebiče (Odber energie)",
-          "content": "Vyberte spotrebiče zo zoznamu. Každý má prednastavený priemerný odber (A). Pre presný výpočet kliknite na ikonu **Edit** (ceruzka) a pomocou posuvníka zadajte, koľko hodín denne spotrebič beží. Denný odber (Ah) je súčet: Ampéry * Hodiny."
+          "heading": "🔌 SPOTREBIČE (ODBER ENERGIE)",
+          "content": "Vyberte spotrebiče zo zoznamu. Každý má prednastavený priemerný odber (A). Pre presný výpočet kliknite na ikonu EDIT (ceruzka) a pomocou posuvníka zadajte, koľko hodín denne spotrebič beží. Denný odber (Ah) je súčet: Ampéry * Hodiny."
         },
         {
-          "heading": "💧 Voda a 🔥 Plyn",
-          "content": "**Voda:** Zadajte objem nádrže a počet osôb. Počíta sa s priemernou spotrebou 15 litrov na osobu/deň.\n\n**Plyn:** Vyberte **veľkosť fľaše** (5 kg, 10 kg, 11 kg atď.). Ak máte vlastnú nádrž, zvoľte 'Vlastná váha' a zadajte hmotnosť plynu.\n\n**Spotreba:** Aktivujte, či chladnička beží na plyn a či kúrite plynom (v zime spotreba plynu výrazne narastá)."
+          "heading": "💧 VODA A 🔥 PLYN",
+          "content": "VODA A: Zadajte objem nádrže a počet osôb. Počíta sa s priemernou spotrebou 15 litrov na osobu/deň.\n\nPLYN: Vyberte VEĽKOSŤ FĽAŠE (5 kg, 10 kg, 11 kg atď.). Ak máte vlastnú nádrž, zvoľte 'Vlastná váha' a zadajte hmotnosť plynu.\n\nSpotreba: Aktivujte, či chladnička beží na plyn a či kúrite plynom (v zime spotreba plynu výrazne narastá)."
         },
         {
-          "heading": "📊 Výsledky a Bilancia",
-          "content": "Zobrazuje sa odhad výdrže v dňoch pre Elektrinu, Vodu a Plyn. Ak je solárny zisk väčší ako celkový denný odber zo spotrebičov, výdrž elektriny bude '∞' (nekonečno).\n\n**Bilancia:** Prehľad denného **Zisku** zo soláru vs. celkový denný **Odber** v Ah."
+          "heading": "📊 VÝSLEDKY A BILANCIA",
+          "content": "Zobrazuje sa odhad výdrže v dňoch pre Elektrinu, Vodu a Plyn. Ak je solárny zisk väčší ako celkový denný odber zo spotrebičov, výdrž elektriny bude '∞' (nekonečno).\n\nBilancia: Prehľad denného ZISKU zo soláru vs. celkový denný ODBER v Ah."
         }
       ]
     },
@@ -181,60 +181,60 @@
     },
     {
       "id": "satellite_tracker",
-  "title": "Sat AR Tracker",
-  "icon": "satellite_alt",
-  "sections": [
-    {
-      "heading": "O FUNKCII",
-      "content": "Tento modul využíva GPS, kompas a kameru vášho zariadenia na zobrazenie presnej polohy geostacionárneho satelitu vo **Fyzickom Svete** (Augmented Reality - AR). Je kľúčový pre rýchle a presné nastavenie satelitnej antény (napr. paraboly) vášho karavanu.\n\nJednoducho vyberte satelit (napr. Astra 23.5°E) a aplikácia vám v reálnom čase ukáže, kam presne namieriť parabolou (Azimut a Elevácia) ."
-    },
-    {
-      "heading": "AKO TO FUNGUJE",
-      "content": "Geostacionárne satelity sú neustále na rovnakom mieste nad rovníkom. Ich polohu vzhľadom na vašu pozíciu na Zemi určujú dva uhly:\n\n* **Azimut (Azi):** Uhol v horizontálnej rovine (kompas) meraný od Severu (0°). Azimut 180° je presne na Juh. Pre Slovensko/Česko je to typicky okolo 170° - 190°.\n* **Elevácia (Elev):** Uhol vo vertikálnej rovine (náklon hore) meraný od obzoru (0°). Pre Slovensko/Česko je to typicky okolo 28° - 35°.\n\nModul tieto uhly vypočíta na základe vašej GPS polohy a zvolenej zemepisnej dĺžky satelitu (Longitude), a následne zobrazí značku na náhľade kamery pomocou údajov z kompasu."
-    },
-    {
-      "heading": "POKYNY NA POUŽITIE",
-      "content": "Pre dosiahnutie najlepších výsledkov a presnosti:\n\n1. **Kalibrácia kompasu:** Pohybujte telefónom vo tvare osmičky ('8'), kým sa kompas neukľudní. Nesmie byť v blízkosti veľkých kovových predmetov (vrátane karosérie auta).\n2. **Získanie GPS:** Uistite sa, že máte aktívnu polohu a dostatočný signál GPS.\n3. **Voľba Satelitu:** Vyberte satelit z predvoleného zoznamu (odporúčané) alebo zadajte presnú dĺžku manuálne (napr. 23.5 pre Astra 23.5°E, -0.8 pre Thor 0.8°W).\n4. **Zarovnanie:** Otočte telefón, kým sa značka satelitu  nezobrazí na obrazovke. Uistite sa, že v smere Elevácie a Azimutu (kam mieri telefón) nie sú žiadne prekážky (stromy, budovy, kopce).\n\n**UPOZORNENIE:** Ak je Elevácia **negatívna**, satelit je pod obzorom a nevidíte ho (napr. za kopcom, alebo ste príliš blízko rovníka a satelit je za vami)."
-    }
-  ]
+      "title": "Sat AR Tracker",
+      "icon": "satellite_alt",
+      "sections": [
+        {
+          "heading": "O FUNKCII",
+          "content": "Tento modul využíva GPS, kompas a kameru vášho zariadenia na zobrazenie presnej polohy geostacionárneho satelitu vo FYZICKOM SVETE (AUGMENTED REALITY - AR). Je kľúčový pre rýchle a presné nastavenie satelitnej antény (napr. paraboly) vášho karavanu.\n\nJednoducho vyberte satelit (napr. Astra 23.5°E) a aplikácia vám v reálnom čase ukáže, kam presne namieriť parabolou (Azimut a Elevácia) ."
+        },
+        {
+          "heading": "AKO TO FUNGUJE",
+          "content": "Geostacionárne satelity sú neustále na rovnakom mieste nad rovníkom. Ich polohu vzhľadom na vašu pozíciu na Zemi určujú dva uhly:\n\n* AZIMUT (AZI): Uhol v horizontálnej rovine (kompas) meraný od Severu (0°). Azimut 180° je presne na Juh. Pre Slovensko/Česko je to typicky okolo 170° - 190°.\n* ELEVÁCIA (ELEV): Uhol vo vertikálnej rovine (náklon hore) meraný od obzoru (0°). Pre Slovensko/Česko je to typicky okolo 28° - 35°.\n\nModul tieto uhly vypočíta na základe vašej GPS polohy a zvolenej zemepisnej dĺžky satelitu (Longitude), a následne zobrazí značku na náhľade kamery pomocou údajov z kompasu."
+        },
+        {
+          "heading": "POKYNY NA POUŽITIE",
+          "content": "Pre dosiahnutie najlepších výsledkov a presnosti:\n\n1. KALIBRÁCIA KOMPASU: Pohybujte telefónom vo tvare osmičky ('8'), kým sa kompas neukľudní. Nesmie byť v blízkosti veľkých kovových predmetov (vrátane karosérie auta).\n2. ZÍSKANIE GPS: Uistite sa, že máte aktívnu polohu a dostatočný signál GPS.\n3. VOĽBA SATELITU: Vyberte satelit z predvoleného zoznamu (odporúčané) alebo zadajte presnú dĺžku manuálne (napr. 23.5 pre Astra 23.5°E, -0.8 pre Thor 0.8°W).\n4. ZAROVNANIE: Otočte telefón, kým sa značka satelitu  nezobrazí na obrazovke. Uistite sa, že v smere Elevácie a Azimutu (kam mieri telefón) nie sú žiadne prekážky (stromy, budovy, kopce).\n\nUPOZORNENIE: Ak je Elevácia NEGATÍVNA, satelit je pod obzorom a nevidíte ho (napr. za kopcom, alebo ste príliš blízko rovníka a satelit je za vami)."
+        }
+      ]
     },
     {
       "id": "sun_path_finder",
-  "title": "Dráha Slnka (AR)",
-  "icon": "wb_sunny",
-  "sections": [
-    {
-      "heading": "O FUNKCII",
-      "content": "Tento modul využíva GPS, kompas a kameru na vizualizáciu skutočnej dráhy Slnka pre vašu aktuálnu polohu a dátum. .\n\nJe to kľúčový nástroj pre:\n\n* **Optimalizáciu solárnych panelov:** Určenie najlepšieho miesta a optimálneho uhla sklonu na maximalizáciu získanej energie.\n* **Tieňová analýza:** Zistenie, či a kedy budú vami vybrané miesto na kempovanie, panel alebo okno zatienené (napr. stromami, budovami).\n* **Orientácia karavanu:** Určenie smeru Juhu (pre nastavenie satelitu) alebo Východu/Západu (pre tienenie)."
-    },
-    {
-      "heading": "AKO TO FUNGUJE",
-      "content": "Na základe vašej zemepisnej šírky a dĺžky (GPS) a aktuálneho dátumu modul počíta:\n\n1. **Azimut (Azi) Slnka:** Uhol od Severu (0° - 360°).\n2. **Eleváciu (Elev) Slnka:** Uhol od horizontu (0° - 90°).\n\nModul zobrazuje **dráhu Slnka** ako sériu hodinových bodov (napr. 06:00, 09:00, 12:00, 15:00, 18:00 LOKÁLNEHO času), ktoré ukazujú, kade Slnko prejde počas dňa. **Červený symbol Slnka** zobrazuje jeho aktuálnu polohu pre vami zvolený čas v spodnej lište.\n\n**DÔLEŽITÉ:** Presnosť výpočtov závisí od presného času, polohy GPS a správnej kalibrácie kompasu vášho telefónu."
-    },
-    {
-      "heading": "POKYNY NA POUŽITIE",
-      "content": "* **Kalibrácia kompasu:** Pre dosiahnutie najlepšieho Azimutu (horizontálny smer) pohybujte telefónom vo tvare osmičky. Nepoužívajte telefón v blízkosti veľkých kovových predmetov (napr. karoséria auta).\n* **Simulácia času:** Pomocou hodín a minút v spodnej časti obrazovky môžete simulovať, kde bude Slnko kedykoľvek počas daného dňa. Napríklad, ak zadáte **09:00**, uvidíte presnú polohu, kde bude Slnko ráno, a môžete skontrolovať, či ho tieň z neďalekého stromu nezakryje.\n* **Elevácia a náklon:** Ak je cieľom nabíjanie solárnych panelov, zistite si maximálnu eleváciu Slnka (zvyčajne okolo 12:00/13:00) a nastavte panel na tento uhol pre maximálny výkon. "
-    }
-  ]
+      "title": "Dráha Slnka (AR)",
+      "icon": "wb_sunny",
+      "sections": [
+        {
+          "heading": "O FUNKCII",
+          "content": "Tento modul využíva GPS, kompas a kameru na vizualizáciu skutočnej dráhy Slnka pre vašu aktuálnu polohu a dátum. .\n\nJe to kľúčový nástroj pre:\n\n* OPTIMALIZÁCIU SOLÁRNYCH PANELOV: Určenie najlepšieho miesta a optimálneho uhla sklonu na maximalizáciu získanej energie.\n* TIEŇOVÁ ANALÝZA: Zistenie, či a kedy budú vami vybrané miesto na kempovanie, panel alebo okno zatienené (napr. stromami, budovami).\n* ORIENTÁCIA KARAVANU: Určenie smeru Juhu (pre nastavenie satelitu) alebo Východu/Západu (pre tienenie)."
+        },
+        {
+          "heading": "AKO TO FUNGUJE",
+          "content": "Na základe vašej zemepisnej šírky a dĺžky (GPS) a aktuálneho dátumu modul počíta:\n\n1. AZIMUT (AZI) SLNKA: Uhol od Severu (0° - 360°).\n2. ELEVÁCIU (ELEV) SLNKA: Uhol od horizontu (0° - 90°).\n\nModul zobrazuje DRÁHU SLNKA ako sériu hodinových bodov (napr. 06:00, 09:00, 12:00, 15:00, 18:00 LOKÁLNEHO času), ktoré ukazujú, kade Slnko prejde počas dňa. ČERVENÝ SYMBOL SLNKA zobrazuje jeho aktuálnu polohu pre vami zvolený čas v spodnej lište.\n\nDÔLEŽITÉ: Presnosť výpočtov závisí od presného času, polohy GPS a správnej kalibrácie kompasu vášho telefónu."
+        },
+        {
+          "heading": "POKYNY NA POUŽITIE",
+          "content": "* KALIBRÁCIA KOMPASU: Pre dosiahnutie najlepšieho Azimutu (horizontálny smer) pohybujte telefónom vo tvare osmičky. Nepoužívajte telefón v blízkosti veľkých kovových predmetov (napr. karoséria auta).\n* SIMULÁCIA ČASU: Pomocou hodín a minút v spodnej časti obrazovky môžete simulovať, kde bude Slnko kedykoľvek počas daného dňa. Napríklad, ak zadáte 09:00, uvidíte presnú polohu, kde bude Slnko ráno, a môžete skontrolovať, či ho tieň z neďalekého stromu nezakryje.\n* ELEVÁCIA A NÁKLON: Ak je cieľom nabíjanie solárnych panelov, zistite si maximálnu eleváciu Slnka (zvyčajne okolo 12:00/13:00) a nastavte panel na tento uhol pre maximálny výkon. "
+        }
+      ]
     },
     {
       "id": "pre_departure_checklist",
-  "title": "Kontrolný Zoznam Pred Odchodom",
-  "icon": "checklist",
-  "sections": [
-    {
-      "heading": "O FUNKCII",
-      "content": "Táto funkcia slúži ako váš personalizovaný **Checklist pred opustením kempu** (alebo miesta, kde ste stáli dlhší čas).\n\nCieľom je zaistiť, že pri odchode nezabudnete na kľúčové úkony, ktoré by mohli viesť k poškodeniu karavanu, strate vecí alebo nebezpečnej jazde:\n\n* **Nezabudnite zatiahnuť nohy/podpery.**\n* **Nezabudnite uvoľniť prípojky** (elektrina, voda, odpad).\n* **Nezabudnite zaistiť interiérové vybavenie** (chladnička, TV/satelit, riad).\n\n"
-    },
-    {
-      "heading": "AKO TO FUNGUJE",
-      "content": "* **Perzistentné dáta:** Stav zaškrtnutia každej položky, ako aj vami pridané položky, sa automaticky ukladajú do pamäte vášho telefónu (`SharedPreferences`). Pri opätovnom spustení aplikácie sa načíta váš posledný stav.\n* **Dokončenie:** Ak zaškrtnete **všetky** položky v zozname, zaznamená sa čas posledného úspešného dokončenia (zobrazený na vrchu obrazovky).\n* **Reset:** Tlačidlo s ikonou **obnovenia (refresh)** v pravom hornom rohu resetuje stav všetkých zaškrtnutí na nevykonané."
-    },
-    {
-      "heading": "TIPY A PRISPÔSOBENIE",
-      "content": "* **Pridanie položky:** Použite **modré plávajúce tlačidlo (+)** na pridanie vlastných, pre vás špecifických, kontrolných bodov (napr. 'Schovať bicykle', 'Zavrieť zadné dvere garáže').\n* **Odstránenie položky:** Ak chcete položku natrvalo odstrániť zo zoznamu, jednoducho ju **potiahnite doľava** (funkcia **`Dismissible`**).\n* **Vynútený reset (Opatrne!):** Tlačidlo s ikonou **koša (delete\forever)** slúži na vymazanie **všetkých** uložených dát z pamäte telefónu (vaše pridané položky aj stav zaškrtnutia). Použite ho len vtedy, ak chcete aplikáciu vrátiť na pôvodný zoznam definovaný v kóde."
-    }
-  ]
+      "title": "Kontrolný Zoznam Pred Odchodom",
+      "icon": "checklist",
+      "sections": [
+        {
+          "heading": "O FUNKCII",
+          "content": "Táto funkcia slúži ako váš personalizovaný CHECKLIST PRED OPUSTENÍM KEMPU (alebo miesta, kde ste stáli dlhší čas).\n\nCieľom je zaistiť, že pri odchode nezabudnete na kľúčové úkony, ktoré by mohli viesť k poškodeniu karavanu, strate vecí alebo nebezpečnej jazde:\n\n* NEZABUDNITE ZATIAHNUŤ NOHY/PODPERY.\n* NEZABUDNITE UVOĽNIŤ PRÍPOJKY (elektrina, voda, odpad).\n* NEZABUDNITE ZAISTIŤ INTERIÉROVÉ VYBAVENIE (chladnička, TV/satelit, riad).\n\n"
+        },
+        {
+          "heading": "AKO TO FUNGUJE",
+          "content": "* PERZISTENTNÉ DÁTA: Stav zaškrtnutia každej položky, ako aj vami pridané položky, sa automaticky ukladajú do pamäte vášho telefónu (SHAREDPREFERENCES). Pri opätovnom spustení aplikácie sa načíta váš posledný stav.\n* DOKONČENIE: Ak zaškrtnete VŠETKY položky v zozname, zaznamená sa čas posledného úspešného dokončenia (zobrazený na vrchu obrazovky).\n* RESET: Tlačidlo s ikonou OBNOVENIA (REFRESH) v pravom hornom rohu resetuje stav všetkých zaškrtnutí na nevykonané."
+        },
+        {
+          "heading": "TIPY A PRISPÔSOBENIE",
+          "content": "* PRIDANIE POLOŽKY: Použite MODRÉ PLÁVAJÚCE TLAČIDLO (+) na pridanie vlastných, pre vás špecifických, kontrolných bodov (napr. 'Schovať bicykle', 'Zavrieť zadné dvere garáže').\n* ODSTRÁNENIE POLOŽKY: Ak chcete položku natrvalo odstrániť zo zoznamu, jednoducho ju POTIAHNITE DOĽAVA (funkcia DISMISSIBLE).\n* VYNÚTENÝ RESET (OPATRNE!): Tlačidlo s ikonou KOŠA (DELETE\\FOREVER) slúži na vymazanie VŠETKÝCH uložených dát z pamäte telefónu (vaše pridané položky aj stav zaškrtnutia). Použite ho len vtedy, ak chcete aplikáciu vrátiť na pôvodný zoznam definovaný v kóde."
+        }
+      ]
     },
     {
       "id": "help_screen_guide",
