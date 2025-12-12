@@ -232,7 +232,7 @@
     },
     {
       "heading": "TIPY A PRISPÔSOBENIE",
-      "content": "* **Pridanie položky:** Použite **modré plávajúce tlačidlo (+)** na pridanie vlastných, pre vás špecifických, kontrolných bodov (napr. 'Schovať bicykle', 'Zavrieť zadné dvere garáže').\n* **Odstránenie položky:** Ak chcete položku natrvalo odstrániť zo zoznamu, jednoducho ju **potiahnite doľava** (funkcia **`Dismissible`**).\n* **Vynútený reset (Opatrne!):** Tlačidlo s ikonou **koša (delete\_forever)** slúži na vymazanie **všetkých** uložených dát z pamäte telefónu (vaše pridané položky aj stav zaškrtnutia). Použite ho len vtedy, ak chcete aplikáciu vrátiť na pôvodný zoznam definovaný v kóde."
+      "content": "* **Pridanie položky:** Použite **modré plávajúce tlačidlo (+)** na pridanie vlastných, pre vás špecifických, kontrolných bodov (napr. 'Schovať bicykle', 'Zavrieť zadné dvere garáže').\n* **Odstránenie položky:** Ak chcete položku natrvalo odstrániť zo zoznamu, jednoducho ju **potiahnite doľava** (funkcia **`Dismissible`**).\n* **Vynútený reset (Opatrne!):** Tlačidlo s ikonou **koša (delete\forever)** slúži na vymazanie **všetkých** uložených dát z pamäte telefónu (vaše pridané položky aj stav zaškrtnutia). Použite ho len vtedy, ak chcete aplikáciu vrátiť na pôvodný zoznam definovaný v kóde."
     }
   ]
     },
