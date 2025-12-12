@@ -24,7 +24,7 @@
     },
     {
       "id": "ar_leveling",
-      "title": "AR Leveling (Vyváženie)",
+      "title": "Leveling - Vyváženie (AR)",
       "icon": "straighten",
       "sections": [
         {
@@ -66,7 +66,7 @@
     },
     {
       "id": "ar_space_planning",
-      "title": "AR Plánovanie priestoru",
+      "title": "Plánovanie priestoru (AR)",
       "icon": "crop_rotate",
       "sections": [
         {
@@ -74,12 +74,12 @@
           "content": "Táto experimentálna funkcia premieňa váš telefón na jednoduchý nástroj pre vizualizáciu priestoru pomocou AUGMENTED REALITY (ROZŠÍRENEJ REALITY). Umožňuje premietnuť virtuálny 3D kváder (box) definovaných rozmerov (Šírka, Dĺžka, Výška) do náhľadu z vašej kamery."
         },
         {
-          "heading": "KĽÚČOVÉ VYUŽITIE",
-          "content": "* Vizualizácia nového nábytku: Zistite, či sa vaša nová chladnička, skriňa alebo lôžko zmestí do karavanu.\n* Overenie voľného miesta: Vizualizujte si, koľko voľného priestoru zostane po inštalácii nového zariadenia.\n* Dizajnové nápady: Pomáha pri plánovaní pre usporiadanie interiéru karavanu alebo pri overení vonkajších úložných priestorov."
+          "heading": "VYUŽITIE",
+          "content": "Pomáha pri určení, či sa na dané miesto zmestíte, alebo či sa vam do karavanu zmestí prenosná klíma."
         },
         {
           "heading": "KALIBRÁCIA A NASTAVENIE (KĽÚČOVÝ KROK)",
-          "content": "Pre realistické zobrazenie je nevyhnutné správne nastavenie dvoch sád hodnôt. \n\n1. ŠÍRKA (W), DĹŽKA (L), VÝŠKA (H): Zadajte presné rozmery (v cm) priestoru/objektu, ktorý chcete vizualizovať (napr. 350 W, 700 L, 300 H).\n2. VZDIALENOSŤ K MIESTU (D): Toto je najdôležitejšia premenná pre mierku. ZMERAJTE VZDIALENOSŤ (V CM) OD OBJEKTÍVU VÁŠHO TELEFÓNU K BODU NA STENE/PODLAHE, KDE MÁ ZAČAŤ VIRTUÁLNY 3D KVÁDER. Táto hodnota sa používa pre projekčný výpočet 3D boxu. Ak je 'D' príliš nízka, box bude vyzerať obrovský a naopak."
+          "content": "Pre realistické zobrazenie je nevyhnutné správne nastavenie dvoch sád hodnôt. \n\n1. ŠÍRKA (W), DĹŽKA (L), VÝŠKA (H): Zadajte presné rozmery (v cm) vašej zostavy (karavan, auto, sedenie), ktorý chcete vizualizovať (napr. 350 W, 700 L, 300 H).\n2. VZDIALENOSŤ K MIESTU (D): Toto je najdôležitejšia premenná pre mierku. ZMERAJTE VZDIALENOSŤ (V CM) OD OBJEKTÍVU VÁŠHO TELEFÓNU K BODU (napr. ďalší karavan, strom), KDE MÁ ZAČAŤ VIRTUÁLNY 3D KVÁDER. Táto hodnota sa používa pre projekčný výpočet 3D boxu. Ak je 'D' príliš nízka, box bude vyzerať obrovský a naopak."
         },
         {
           "heading": "AKO FUNGUJE AR EFEKT",
