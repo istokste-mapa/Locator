@@ -93,7 +93,7 @@
     },
     {
       "id": "gps_locator",
-  "title": "GPS Lokátor a Parkovisko",
+  "title": "Kde parkujem ?",
   "icon": "gps_fixed",
   "sections": [
     {
