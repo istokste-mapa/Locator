@@ -307,7 +307,6 @@
       { "id": 1, "typ": "Wildcamping: Toleriert", "text": "Hohe Toleranz, aber verhalten Sie sich respektvoll gegenüber Natur und Einheimischen.", "ikona": "👍" },
       { "id": 2, "typ": "Hinweis", "text": " Diese Limits sind Richtwerte und nach strengeren Regeln für Gespanne festgelegt. Beachten Sie immer die lokale Beschilderung und die technischen Limits Ihres Fahrzeugs.", "ikona": "⚠️" }
     ]
-  }
   },
 
   "speedLimits": {
@@ -357,6 +356,7 @@
     "ALB": { "<= 3.5t": "https://www.autostradatirana.al/en/", "> 3.5t": "https://www.autostradatirana.al/en/" }
   }
 }
+
 
 
 
