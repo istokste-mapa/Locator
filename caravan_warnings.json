@@ -310,27 +310,27 @@
   },
 
   "speedLimits": {
-    "SK": { "country": "Slovensko", "<= 3.5t": { "town": 50, "outskirts": 90, "expressway": 90, "highway": 90 }, "> 3.5t": { "town": 50, "outskirts": 90, "expressway": 90, "highway": 90 } },
-    "AT": { "country": "Rakúsko", "<= 3.5t": { "town": 50, "outskirts": 100, "expressway": 100, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 70, "expressway": 80, "highway": 80 } },
-    "DE": { "country": "Nemecko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
-    "FR": { "country": "Francúzsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 110 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 110 } },
-    "IT": { "country": "Taliansko", "<= 3.5t": { "town": 50, "outskirts": 70, "expressway": 70, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 70, "expressway": 70, "highway": 80 } },
-    "CH": { "country": "Švajčiarsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "SK": { "country": "Slovensko", "<= 3.5t": { "town": 50, "outskirts": 90, "expressway": 90, "highway": 90 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "AT": { "country": "Rakúsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 70, "expressway": 80, "highway": 80 } },
+    "DE": { "country": "Nemecko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 100 } },
+    "FR": { "country": "Francúzsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 110, "highway": 130 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 110 } },
+    "IT": { "country": "Taliansko", "<= 3.5t": { "town": 50, "outskirts": 70, "expressway": 70, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 100 } },
+    "CH": { "country": "Švajčiarsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 } },
     "PL": { "country": "Poľsko", "<= 3.5t": { "town": 50, "outskirts": 70, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 70, "expressway": 80, "highway": 80 } },
-    "FI": { "country": "Fínsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
-    "SE": { "country": "Švédsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
-    "DK": { "country": "Dánsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
-    "NL": { "country": "Holandsko", "<= 3.5t": { "town": 50, "outskirts": 90, "expressway": 90, "highway": 90 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
-    "BE": { "country": "Belgicko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 70, "expressway": 90, "highway": 90 } },
-    "ES": { "country": "Španielsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 90, "highway": 90 } },
+    "FI": { "country": "Fínsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "SE": { "country": "Švédsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 } },
+    "DK": { "country": "Dánsko", "<= 3.5t": { "town": 50, "outskirts": 70, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 100 } },
+    "NL": { "country": "Holandsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 90, "highway": 90 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "BE": { "country": "Belgicko", "<= 3.5t": { "town": 50, "outskirts": 70, "expressway": 120, "highway": 120 }, "> 3.5t": { "town": 50, "outskirts": 90, "expressway": 90, "highway": 90 } },
+    "ES": { "country": "Španielsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 90 } },
     "SLO": { "country": "Slovinsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
     "HU": { "country": "Maďarsko", "<= 3.5t": { "town": 50, "outskirts": 70, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 70, "expressway": 80, "highway": 80 } },
-    "HR": { "country": "Chorvátsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 110 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 90 } },
-    "GR": { "country": "Grécko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 90, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 90 } },
-    "SRB": { "country": "Srbsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 90, "highway": 100 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 100, "highway": 100 } },
-    "BiH": { "country": "Bosna a Hercegovina", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 90, "highway": 110 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
-    "MNE": { "country": "Čierna Hora", "<= 3.5t": { "town": 50, "outskirts": 70, "expressway": 90, "highway": 110 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
-    "ALB": { "country": "Albánsko", "<= 3.5t": { "town": 40, "outskirts": 70, "expressway": 90, "highway": 90 }, "> 3.5t": { "town": 40, "outskirts": 80, "expressway": 80, "highway": 80 } }
+    "HR": { "country": "Chorvátsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 90, "highway": 90 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 90 } },
+    "GR": { "country": "Grécko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "SRB": { "country": "Srbsko", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "BiH": { "country": "Bosna a Hercegovina", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "MNE": { "country": "Čierna Hora", "<= 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 50, "outskirts": 80, "expressway": 80, "highway": 80 } },
+    "ALB": { "country": "Albánsko", "<= 3.5t": { "town": 40, "outskirts": 70, "expressway": 80, "highway": 80 }, "> 3.5t": { "town": 40, "outskirts": 80, "expressway": 80, "highway": 90 } }
   },
   "vignetteLinks": {
     "SK": { "<= 3.5t": "https://eznamka.sk/", "> 3.5t": "https://eznamka.sk/" },
@@ -356,6 +356,7 @@
     "ALB": { "<= 3.5t": "https://www.autostradatirana.al/en/", "> 3.5t": "https://www.autostradatirana.al/en/" }
   }
 }
+
 
 
 
